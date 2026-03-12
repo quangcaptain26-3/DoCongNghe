@@ -1,0 +1,67 @@
+﻿Chào bạn! Rất sẵn lòng. Để biến những trang sách này thành một bài giảng thực thụ, mình sẽ thiết kế lộ trình theo 3 phần (Module). Mỗi phần sẽ đi từ Công thức -> Giải thích -> Lưu ý "bẫy" -> Ví dụ thực tế.
+Học tiếng Trung không khó, chỉ cần mình nắm chắc cái "khung" thôi. Bắt đầu nhé!
+________________
+📘 GIÁO TRÌNH NGỮ PHÁP TIẾNG TRUNG
+CHỦ ĐỀ: NHẤN MẠNH, LIÊN KẾT VÀ MIÊU TẢ SINH ĐỘNG
+________________
+🛑 MODULE 1: Cấu trúc nhấn mạnh "是……/shì/ …… 的/de/"
+Cấu trúc này sinh ra không phải để kể một chuyện mới, mà để "soi đèn" vào một chi tiết cụ thể của một việc đã xảy ra rồi.
+1. Công thức (Formulas)
+* Khẳng định: $S + (是) + [\text{Thông tin nhấn mạnh}] + V + 的$
+* Phủ định: $S + 不是 + [\text{Thông tin nhấn mạnh}] + V + 的$
+2. Nhấn mạnh cái gì?
+Chúng ta dùng cấu trúc này để làm nổi bật:
+* Thời gian: (Khi nào?) - 我是昨天来的。(Tôi đến vào hôm qua.)
+* Địa điểm: (Ở đâu?) - 我们是从美国来的。(Chúng tôi đến từ Mỹ.)
+* Cách thức: (Bằng cách nào?) - 他是坐飞机来的。(Anh ấy đến bằng máy bay.)
+* Mục đích: (Để làm gì?) - 我不是来旅行의, 我是来留学的。(Tôi không phải đến để du lịch, mà để du học.)
+3. Lưu ý quan trọng (Pro-tips)
+⚠️ Quy tắc vàng:
+1. Trong câu khẳng định, chữ 是 có thể lược bỏ. Nhưng trong câu phủ định, 不是 là bắt buộc.
+2. Vị trí tân ngữ: Nếu động từ có tân ngữ (ví dụ: học tiếng Trung), tân ngữ thường đứng sau chữ 的.
+   * Ví dụ: 你是在哪儿学的汉语？(Bạn học tiếng Hán ở đâu?)
+________________
+⚡ MODULE 2: Cấu trúc liên kết "一……/yī/ …… 就……/jiù/"
+Đây là cấu trúc "siêu tốc độ", dùng để chỉ hai hành động xảy ra rất sát nhau hoặc có mối quan hệ nhân quả.
+Cách dùng A: "Vừa... đã..." (Hành động liên tiếp)
+Dùng khi hành động thứ 2 xảy ra ngay lập tức sau hành động thứ 1.
+* Ví dụ: 我一下课就去看你。(Tôi vừa tan học là đi thăm bạn ngay.)
+* Ví dụ: 他一到中国就给我打了个电话。(Anh ấy vừa đến Trung Quốc đã gọi điện cho tôi luôn.)
+Cách dùng B: "Hễ... là..." (Điều kiện và Kết quả)
+Dùng để chỉ một thói quen hoặc một quy luật: Cứ có A thì chắc chắn sẽ có B.
+* Ví dụ: 他一喝酒就脸红。(Anh ấy hễ uống rượu là đỏ mặt.)
+* Ví dụ: 中国人一听就知道你是老外。(Người Trung Quốc hễ nghe là biết ngay bạn là người nước ngoài.)
+________________
+✨ MODULE 3: Lặp lại tính từ (形容词重叠)
+Mục đích của việc lặp lại là để tăng mức độ biểu đạt và làm câu văn trở nên sinh động, có tính miêu tả cao. Nó giống như tiếng Việt mình nói "đỏ" với "đỏ đỏ/đỏ rực" vậy.
+1. Tính từ đơn âm tiết (Dạng AA)
+Công thức: A ➔ AA(儿)
+* Cách dùng: Thường thêm nhi hóa 儿 ở cuối để nghe tự nhiên, nhẹ nhàng hơn.
+* Ví dụ: * 慢 (màn - chậm) ➔ 慢慢儿 (mànmānr - thong thả, chầm chậm).
+   * 早 (zǎo - sớm) ➔ 早早儿 (zǎozǎor - thật sớm).
+   * Câu: 你慢慢儿说。(Bạn cứ từ từ mà nói.)
+2. Tính từ song âm tiết (Dạng AABB)
+Công thức: AB ➔ AABB
+* Cách dùng: Khi từ này đứng trước động từ để làm trạng ngữ, ta bắt buộc phải thêm 地 (de).
+* Ví dụ: * 高兴 (gāoxìng) ➔ 高高兴兴 (gāogāo xìngxìng).
+   * 漂亮 (piàoliang) ➔ 漂漂亮亮 (piàopiào liàngliàng).
+   * Câu: 她高高兴兴地对我告别。(Cô ấy tạm biệt tôi một cách đầy vui vẻ.)
+________________
+📝 BẢNG TỔNG KẾT NHANH (CHEATSHEET)
+Cấu trúc
+	Chức năng chính
+	Ví dụ ngắn
+	是...的
+	Nhấn mạnh chi tiết đã qua
+	我是坐车来的。(Tôi đi xe đến.)
+	一...就...
+	Tốc độ nhanh / Quy luật
+	一下雨就冷。(Hễ mưa là lạnh.)
+	AA / AABB
+	Miêu tả sinh động, tăng mức độ
+	漂漂亮亮的。(Đẹp lung linh.)
+	________________
+💡 Bước tiếp theo dành cho bạn:
+Để nhớ lâu nhất, bạn hãy thử ghép 3 cấu trúc này vào 1 câu chuyện ngắn nhé. Ví dụ:
+"Tôi vừa về nhà đã thấy cô ấy. Cô ấy là đến vào hôm nay. Cô ấy ăn mặc rất xinh đẹp (AABB)."
+Bạn có muốn mình sửa giúp 3 câu ví dụ do bạn tự đặt dựa trên 3 ngữ pháp này không? Đừng ngại "thử lửa" nhé!

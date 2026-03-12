@@ -1,0 +1,170 @@
+﻿TỪ VỰNG TIẾNG TRUNG CHUYÊN NGÀNH AOI (PEGATRON)
+Bảng tổng hợp từ vựng bao gồm Hán tự, Phiên âm (Pinyin) và Ý nghĩa tiếng Việt tương ứng trong ngữ cảnh vận hành hệ thống AOI.
+1. TỪ VỰNG CHUNG (GENERAL)
+Hán tự
+	Pinyin
+	Tiếng Việt
+	和碩聯合科技
+	Hé shuò liánhé kējì
+	Tập đoàn Pegatron
+	流水線
+	Liúshuǐxiàn
+	Dây chuyền sản xuất (Line)
+	機種
+	Jīzhǒng
+	Model / Loại máy
+	流程
+	Liúchéng
+	Quy trình
+	資料 / 數據
+	Zīliào / Shùjù
+	Dữ liệu
+	說明
+	Shuōmíng
+	Hướng dẫn / Giải thích
+	示意圖
+	Shìyìtú
+	Sơ đồ minh họa
+	數量
+	Shùliàng
+	Số lượng
+	需求
+	Xūqiú
+	Yêu cầu
+	2. PHẦN CỨNG & THIẾT BỊ (HARDWARE)
+Hán tự
+	Pinyin
+	Tiếng Việt
+	相機
+	Xiàngjī
+	Camera
+	鏡頭
+	Jìngtóu
+	Ống kính (Lens)
+	刷槍
+	Shuāqiāng
+	Súng quét mã vạch (Scanner)
+	串口
+	Chuànkǒu
+	Cổng nối tiếp (Serial Port / COM)
+	設備
+	Shèbèi
+	Thiết bị
+	顯卡
+	Xiǎnkǎ
+	Card đồ họa (GPU)
+	顯存
+	Xiǎncún
+	Bộ nhớ video (VRAM)
+	機台
+	Jītái
+	Máy móc / Trạm làm việc
+	傳送帶
+	Chuánsòngdài
+	Băng chuyền (Conveyor)
+	3. THAO TÁC HÌNH ẢNH & AI (IMAGE & AI)
+Hán tự
+	Pinyin
+	Tiếng Việt
+	收集
+	Shōují
+	Thu thập (ảnh)
+	拍照
+	Pāizhào
+	Chụp ảnh
+	保存 / 儲存
+	Bǎocún / Chǔcún
+	Lưu trữ
+	上傳
+	Shàngchuán
+	Upload / Tải lên
+	標記 / 標註
+	Biāojì / Biāozhù
+	Gán nhãn (Labeling)
+	元件
+	Yuánjiàn
+	Linh kiện
+	位置
+	Wèizhì
+	Vị trí
+	類別
+	Lèibié
+	Class / Loại
+	多邊形
+	Duōbiānxíng
+	Đa giác (Polygon)
+	矩形
+	Jǔxíng
+	Hình chữ nhật (Rectangle)
+	訓練
+	Xùnliàn
+	Huấn luyện (Training)
+	驗證
+	Yànzhèng
+	Xác thực (Validation)
+	發布
+	Fābù
+	Phát hành (Publish)
+	版本號
+	Bǎnběnhào
+	Số phiên bản (Version)
+	4. QUẢN LÝ CHẤT LƯỢNG & LỖI (QUALITY & DEFECTS)
+Hán tự
+	Pinyin
+	Tiếng Việt
+	正常
+	Zhèngcháng
+	Bình thường (Pass)
+	不良 / 錯誤
+	Bùliáng / Cuòwù
+	Lỗi / Không tốt (Fail/NG)
+	缺件
+	Quējiàn
+	Thiếu linh kiện
+	歪斜
+	Wāixié
+	Bị lệch / Xéo
+	模糊
+	Móhú
+	Bị mờ
+	髒汙
+	Zāngwū
+	Bị bẩn
+	極性
+	Jíxìng
+	Cực (âm/dương)
+	正極 / 負極
+	Zhèngjí / Fùjí
+	Cực dương / Cực âm
+	判斷
+	Pànduàn
+	Phán đoán / Kết luận
+	5. THAO TÁC HỆ THỐNG (SYSTEM OPERATIONS)
+Hán tự
+	Pinyin
+	Tiếng Việt
+	解壓縮
+	Jiě yāsuō
+	Giải nén
+	授權
+	Shòuquán
+	Cấp quyền (Permissions)
+	命令列 / 終端
+	Mìnglìngliè / Zhōngduān
+	Dòng lệnh / Terminal
+	執行
+	Zhíxíng
+	Thực thi (Run/Execute)
+	升級
+	Shēngjí
+	Nâng cấp (Upgrade)
+	重設
+	Chóngshè
+	Reset / Thiết lập lại
+	修改
+	Xiūgǎi
+	Sửa đổi / Chỉnh sửa
+	設置 / 設定
+	Shèzhì / Shèdìng
+	Cấu hình / Cài đặt
+	Ghi chú: Khi làm việc trên giao diện PEGAAi tiếng Trung, bạn hãy chú ý các nút bấm có chữ "送出" (Sòngchū - Gửi đi/Submit) và "取消" (Qǔxiāo - Hủy bỏ).

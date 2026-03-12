@@ -1,0 +1,116 @@
+﻿KHÓA HỌC: VẬN HÀNH HỆ THỐNG AOI (PEGATRON CHUẨN V2.0)
+Mục tiêu: Nắm vững toàn bộ quy trình từ thu thập hình ảnh, gán nhãn, huấn luyện AI Model, cấu hình công cụ kiểm tra đến triển khai thực tế trên máy trạm Ubuntu.
+MODULE 1: QUY TRÌNH THU THẬP DỮ LIỆU (DATA COLLECTION)
+Mục đích: Cung cấp "nguyên liệu" hình ảnh chất lượng cao để AI học.
+1.1. Tiêu chuẩn số lượng hình ảnh cần chụp
+Để AI nhận diện tốt, bạn cần thu thập đủ số lượng và đa dạng góc độ. Quy tắc gom ảnh cho 1 Model:
+* Loại 1 (80 tấm): Hình ảnh trọn vẹn 1 PCB. (Chia làm 2 thư mục: 60 tấm train / 20 tấm test).
+* Loại 2 (60 tấm): Hình ảnh trọn vẹn 1 PCB và lộ một phần PCB ở line dưới (Dành cho máy nhỏ. Máy to bỏ qua bước này: 50 train / 10 test).
+* Loại 3 (60 tấm): Hình ảnh chỉ có nửa trên của PCB (50 train / 10 test).
+* Loại 4 (60 tấm): Hình ảnh 2 phần của PCB bị cắt ngang (50 train / 10 test).
+* Lưu ý tuyệt đối: KHÔNG thu thập ảnh có PCB hoàn chỉnh ở dưới và một phần PCB ở trên.
+1.2. Thao tác chụp thủ công (Hiệu quả nhất)
+1. Mở phần mềm của hãng camera Basler: pylon Viewer.
+2. Nhấn nút chụp liên tục (hoặc dùng phím tắt Ctrl + S lưu ảnh thủ công khi bo mạch chạy qua).
+3. Đặt tên thư mục rõ ràng theo ngày/loại lỗi để dễ quản lý.
+MODULE 2: TẠO GOLDEN FILE (ĐỊNH VỊ LINH KIỆN)
+Mục đích: Dạy cho hệ thống biết bo mạch (PCB) nằm ở đâu và các linh kiện cụ thể nằm ở vị trí nào trên bo mạch đó.
+2.1. Thao tác trên phần mềm Component Locator
+1. Mở tool Component Locator -> Nhấn Open chọn 1 hình ảnh chuẩn nhất vừa chụp.
+2. Định vị viền PCB: Chọn công cụ Create Polygons (Đa giác). Click chuột trái vẽ xuôi chiều kim đồng hồ theo sát viền PCB -> Điền tên là pcb.
+3. Định vị khung linh kiện: Chọn công cụ Create Rectangle (Hình chữ nhật). Kéo khung vừa vặn ôm sát linh kiện. Cửa sổ thông tin hiện lên, bạn cần điền:
+   * Mục 2 (Type): Tên loại linh kiện (Ví dụ: lower, upper, LED).
+   * Mục 3 (Part ID): Tên chân/vị trí cụ thể.
+4. Lưu file (Ctrl + S). File sinh ra sẽ đóng vai trò là "Golden file" làm gốc.
+MODULE 3: TẠO VÀ HUẤN LUYỆN MODEL TRÊN PEGAAi
+Mục đích: Tải dữ liệu lên nền tảng đám mây PEGAAi, gán nhãn (label) và huấn luyện AI.
+3.1. Quản lý Category Type (Phân loại linh kiện)
+Trước khi làm, phải quy hoạch rõ ràng danh sách linh kiện.
+* Quy tắc vàng: Các linh kiện chưa hàn, cắt chéo, mờ bẩn -> Gom chung vào 1 class là error hoặc unknown.
+* Linh kiện có cực phải chia làm 2 class: Cực dương (Positive) và Cực âm (Negative).
+3.2. Upload Dữ liệu (Edge Database)
+1. Vào project trên PEGAAi -> Chọn Edge Database -> Manage Files -> upload.
+2. Mẹo hiệu suất: Nén hình ảnh thành file .zip (Dưới 1GB) để upload thay vì up từng tấm (hệ thống giới hạn up 100 tấm/lần nếu up lẻ).
+3.3. Tạo Dataset & Gán nhãn (Labeling)
+Hệ thống có 3 loại Model cần làm: PCB Detection Model, PCB Localization Model, và Component AOI Model.
+* Đối với PCB Detection & Localization: Dùng công cụ Shape để vẽ đa giác (Polygons) khoanh vùng bo mạch. Phải đánh dấu thứ tự điểm P1, P2, P3, P4 thuận chiều kim đồng hồ.
+* Đối với Component Model (Đỉnh cao hiệu suất nằm ở đây):
+   * Vào giao diện Tag Annotation.
+   * MẸO 1: Tích chọn ô "Automatically go to the next frame". Khi bạn gán nhãn xong, ảnh tự động nhảy sang tấm tiếp theo, không cần bấm Next.
+   * MẸO 2: Sử dụng bàn phím số (Numpad) từ 1 đến 9 được gán sẵn cho các Category (VD: 1=Square_container, 2=Transformer). Mắt nhìn màn hình, tay gõ phím số, tốc độ sẽ tăng gấp 5 lần so với dùng chuột.
+   * MẸO 3 (Giảm mỏi mắt): Sử dụng tính năng Hợp nhất Dataset (Merge). Gom các linh kiện giống nhau vào chung 1 dataset để dán nhãn 1 thể, thay vì chuyển đổi qua lại giữa các linh kiện khác nhau gây loạn thị giác.
+3.4. Huấn luyện (Training) & Đánh giá
+1. Tạo Task Train: Khai báo số lượng GPU, chọn Dataset (Nên đặt tên Dataset chuẩn: Tên_Máy + train/validation + Thời_gian).
+2. Xem Confusion Matrix (Ma trận nhầm lẫn): * Đọc ma trận: Trục ngang và dọc giao nhau tạo thành một đường chéo. Các thông số nằm TRÊN đường chéo là AI nhận diện đúng. Các con số nằm LỆCH khỏi đường chéo là AI nhận diện sai.
+   * Ví dụ: Nhìn cột error, nếu có số '4' nằm ở hàng lower, nghĩa là có 4 linh kiện bị lỗi (error) nhưng máy lại đoán nhầm là linh kiện bình thường (lower). Cần click vào đó xem ảnh để train lại.
+3. Nếu Accuracy (ACC) đạt chuẩn (Thường > 98-99%), nhấn Publish (Phát hành). Lưu lại dãy mã Version (VD: v0.4.10.0...).
+MODULE 4: CẤU HÌNH CÔNG CỤ KIỂM TRA (WINDOWS)
+Mục đích: Thiết lập thông số cho phần mềm chạy tại trạm (Station).
+4.1. Cấu hình file projects.json
+* Mở file bằng Notepad++.
+* Sửa các dòng tương ứng với thông tin Line sản xuất: "product", "line" (Mã line), "station", "isn length" (Độ dài mã vạch sản phẩm).
+4.2. Cấu hình file setting (Các thông số môi trường)
+* Sửa đường dẫn lưu trữ (log_folder_path, result_folder_path).
+* Bật/tắt các tính năng bằng số 1 (Bật) hoặc 0 (Tắt). Ví dụ: upload = 1, selftest = 0.
+* Tỷ lệ nén ảnh: pass_image_resize_factor = 0.25 (Giảm dung lượng ảnh Pass để tiết kiệm ổ cứng).
+4.3. Cài đặt Súng bắn mã vạch (Barcode Scanner)
+1. Cắm súng quét, vào Windows Device Manager -> Ports (COM & LPT) -> Ghi nhớ cổng COM (VD: COM8).
+2. Chỉnh súng quét sang chế độ USB Serial (COM) và bật chế độ tự động thêm dấu Enter (Suffix CR) sau khi quét.
+3. Mã hóa VID/PID: Trong Device Manager, xem tab Detail -> Hardware Ids của súng quét. Lấy mã Hex của VID và PID (VD: VID là 0c2e, PID là 0eaa). Lên web chuyển đổi từ hệ 16 (Hex) sang hệ 10 (Decimal). Điền con số hệ 10 này vào file setting (bcr_vid = 3118, bcr_pid = 3754).
+MODULE 5: TRIỂN KHAI TRÊN UBUNTU (MÁY CHẠY AI)
+Mục đích: Tải Model từ Cloud về máy tính công nghiệp Ubuntu ở dưới Line.
+5.1. Thiết lập Mạng (Static IP)
+* Vào Network Settings trên Ubuntu -> Tắt DHCP, chọn IPv4 Manual.
+* Nhập IP tĩnh, Subnet Mask và Gateway để máy tính có thể kết nối với hệ thống SFIS và OTA Server của Pegatron.
+* Mở Terminal Ping thử các server OTA (ping edge-ota.cambrian...) để đảm bảo mạng thông.
+5.2. Chạy OTA Agent & Launcher
+1. Copy thư mục ota_launcher ra Desktop.
+2. Cấp quyền thực thi: Mở terminal gõ sudo chmod 755 ota_agent.
+3. Chạy lệnh: ./ota_launcher.
+4. Màn hình console hiện ra, nhập số thứ tự tương ứng với Model của bạn -> Chọn phiên bản Model vừa Publish trên PEGAAi.
+5. Máy sẽ tự động pull (kéo) image Docker chứa AI Model về máy.
+6. Chọn yes để thực hiện Convert weight (Tối ưu hóa tốc độ suy luận của AI).
+5.3. Kiểm tra vận hành
+* Gõ lệnh sudo docker ps: Kiểm tra xem các container AI (Detection, Localization, Classifier) đã ở trạng thái Up chưa.
+* Gõ lệnh watch -n 3 nvidia-smi: Cứ 3 giây làm mới 1 lần để theo dõi Card màn hình (GPU). Kiểm tra dung lượng VRAM (Memory-Usage) và % công suất GPU để biết AI đang thực sự xử lý hình ảnh.
+TỪ ĐIỂN THUẬT NGỮ CẦN LƯU Ý KHI VẬN HÀNH
+Để giao tiếp chuẩn trong team và đọc hiểu log lỗi, bạn cần nắm vững các thuật ngữ sau:
+Thuật ngữ (Tiếng Anh/Trung)
+	Viết tắt
+	Ý nghĩa và Cách hiểu trong hệ thống AOI
+	Automated Optical Inspection
+	AOI
+	Hệ thống kiểm tra quang học tự động. Dùng camera chụp ảnh bo mạch và dùng AI để soi các lỗi sai linh kiện, thiếu linh kiện, hàn xéo...
+	Golden File
+	(Không có)
+	File chuẩn (Tạo từ Component Locator). Chứa tọa độ vị trí chuẩn của tất cả các linh kiện trên một PCB hoàn hảo. AI dựa vào đây để biết phải cắt ảnh ở đâu.
+	Category Type / Class
+	(Không có)
+	"Lớp" hay "Loại" linh kiện. Ví dụ: IC, Tụ điện, Điện trở, hoặc phân loại rác/lỗi (error, unknown).
+	Dataset
+	(Không có)
+	Tập dữ liệu. Là một thư mục chứa rất nhiều ảnh dùng để dạy AI. Chia làm 2 loại: Train (Tập huấn luyện - để AI học) và Validation (Tập xác thực - để thi kiểm tra xem AI học vào không).
+	Detection Model
+	(Không có)
+	Mô hình trí tuệ nhân tạo chuyên làm nhiệm vụ "Dò tìm" xem bo mạch PCB đang nằm ở vị trí nào trong khung hình camera.
+	Localization Model
+	(Không có)
+	Mô hình chuyên tìm 4 điểm góc của bo mạch để căn chỉnh, xoay hình ảnh thẳng lại trước khi cắt nhỏ từng linh kiện.
+	Component AOI Model
+	(Không có)
+	Mô hình phân loại. Nó nhận ảnh các linh kiện nhỏ đã bị cắt rời ra và phán đoán: Đây là loại linh kiện gì? Có bị lỗi không?
+	Confusion Matrix
+	(Không có)
+	Ma trận nhầm lẫn. Bảng đánh giá độ ngu/khôn của AI. Giúp kỹ sư biết AI đang hay bị nhầm linh kiện A thành linh kiện B ở điểm nào.
+	Over-The-Air
+	OTA
+	Cập nhật từ xa. Hệ thống tải phiên bản AI Model mới nhất từ server Cloud xuống máy trạm dưới Line sản xuất mà không cần dùng USB copy thủ công.
+	Docker Container
+	(Không có)
+	Một công nghệ gói phần mềm. Các AI model khi tải về Ubuntu sẽ chạy độc lập trong các "Container" này. Gõ docker ps để xem nó còn sống hay đã sập.
+	Vendor ID / Product ID
+	VID / PID
+	Mã định danh phần cứng của súng bắn mã vạch. AOI cần thông số này (đã chuyển sang hệ thập phân) để nhận diện đúng súng quét đang cắm vào cổng USB nào.
+	SFIS
+	SFIS
+	Hệ thống quản lý thông tin xưởng sản xuất của Pegatron. AOI sau khi kiểm tra xong (Pass/Fail) sẽ đẩy dữ liệu lên hệ thống này qua mạng LAN.
