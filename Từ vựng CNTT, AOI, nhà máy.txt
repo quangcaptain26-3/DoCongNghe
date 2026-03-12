@@ -1,0 +1,735 @@
+﻿Kiến thức chuyên môn và ngôn ngữ học ứng dụng cho kỹ sư CNTT và AOI trong môi trường sản xuất thông minh
+Sự chuyển mình mạnh mẽ của ngành sản xuất toàn cầu dưới tác động của Cách mạng Công nghiệp 4.0 đã biến các nhà máy truyền thống thành các thực thể kỹ thuật số phức tạp. Trong hệ sinh thái này, vai trò của người kỹ sư Công nghệ thông tin (CNTT) và kỹ sư Kiểm tra Quang học Tự động (AOI) không chỉ đơn thuần là vận hành máy móc mà còn là nhịp cầu kết nối giữa phần cứng sản xuất và hệ thống dữ liệu quản trị. Việc nắm vững hệ thống thuật ngữ chuyên ngành tiếng Trung — ngôn ngữ chủ đạo trong các chuỗi cung ứng điện tử khu vực — trở thành một yêu cầu tiên quyết để đảm bảo sự vận hành trơn tru của dây chuyền và sự chính xác trong giao tiếp kỹ thuật. Báo cáo này đi sâu vào việc phân tích các tầng ngôn ngữ từ cấp độ quản trị nhân sự, hạ tầng hệ thống cho đến các thuật toán kiểm tra chuyên sâu, giúp người lao động làm chủ hoàn toàn môi trường làm việc tại các công xưởng hiện đại.1
+Cấu trúc tổ chức và phân cấp vai trò trong hệ thống nhà máy hiện đại
+Một nhà máy sản xuất linh kiện điện tử quy mô lớn được vận hành dựa trên một cấu trúc nhân sự chặt chẽ, nơi mỗi vị trí có một danh xưng và trách nhiệm cụ thể. Việc hiểu rõ các chức danh này không chỉ giúp kỹ sư xác định đúng đối tượng trong luồng báo cáo mà còn phản ánh văn hóa phân cấp đặc trưng trong các doanh nghiệp sử dụng tiếng Trung.1
+Hệ thống quản trị thượng tầng và điều hành sản xuất
+Khối quản lý là nơi đưa ra các quyết định chiến lược về kế hoạch sản xuất và phân bổ nguồn lực. Kỹ sư AOI và IT thường xuyên phải báo cáo các chỉ số như tỷ lệ hàng đạt (Yield Rate) hoặc tình trạng hệ thống mạng cho các cấp bậc này.1
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Vai trò chuyên môn
+	厂长
+	Chǎngzhǎng
+	Giám đốc nhà máy
+	Người đứng đầu toàn bộ hoạt động của xưởng.
+	经理
+	Jīnglǐ
+	Giám đốc / Quản lý
+	Chịu trách nhiệm cho một mảng cụ thể (Sản xuất, IT, Chất lượng).
+	车间主任
+	Chējiān zhǔrèn
+	Quản đốc phân xưởng
+	Điều hành trực tiếp các hoạt động tại một phân xưởng cụ thể.
+	生产主管
+	Shēngchǎn zhǔguǎn
+	Chủ quản sản xuất
+	Giám sát tiến độ sản xuất và hiệu suất lao động.1
+	班组长
+	Bānzǔzhǎng
+	Ca trưởng / Tổ trưởng
+	Quản lý trực tiếp một nhóm công nhân trong một ca làm việc.
+	领班
+	Lǐngbān
+	Trưởng ca
+	Người điều phối nhân lực và giải quyết sự cố tức thì tại hiện trường.
+	Đội ngũ kỹ thuật và chuyên gia hệ thống
+Đây là lực lượng nòng cốt trong việc duy trì "sức khỏe" của nhà máy thông minh. Đối với một kỹ sư CNTT làm việc trong xưởng, việc tương tác với các đồng nghiệp ở các mảng phần cứng, phần mềm và bảo trì là hoạt động diễn ra hàng giờ.1
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Phạm vi công việc
+	工程师
+	Gōngchéngshī
+	Kỹ sư
+	Danh xưng chung cho các chuyên gia kỹ thuật có bằng cấp.
+	技术员
+	Jìshùyuán
+	Kỹ thuật viên
+	Người hỗ trợ kỹ sư trong việc lắp đặt và sửa chữa thiết bị.
+	技师
+	Jìshī
+	Cán bộ kỹ thuật
+	Chuyên gia có tay nghề cao trong một lĩnh vực hẹp (ví dụ: hàn, cơ khí).
+	软件工程师
+	Ruǎnjiàn gōngchéngshī
+	Kỹ sư phần mềm
+	Thiết kế và duy trì các hệ thống điều khiển, MES.2
+	硬件工程师
+	Yìngjiàn gōngchéngshī
+	Kỹ sư phần cứng
+	Chăm sóc hạ tầng máy tính, server và các thiết bị ngoại vi.
+	系统管理员
+	Xìtǒng guǎnlǐyuán
+	Quản trị hệ thống
+	Đảm bảo tính sẵn sàng của mạng nội bộ và quyền truy cập.
+	程序员
+	Chéngxùyuán
+	Lập trình viên
+	Viết code, chỉnh sửa lỗi phần mềm và cập nhật firmware.7
+	技术顾问
+	Jìshù gùwèn
+	Cố vấn kỹ thuật
+	Chuyên gia tư vấn về quy trình hoặc công nghệ mới.
+	绘图员
+	Huìtúyuán
+	Nhân viên vẽ kỹ thuật
+	Chuyên vẽ các sơ đồ mạch điện tử (PCB) hoặc bản vẽ cơ khí.6
+	Khối kiểm soát chất lượng và hậu cần sản xuất
+Trong một dây chuyền SMT, đội ngũ kiểm soát chất lượng (QC/QA) là đối tác quan trọng nhất của kỹ sư AOI. Dữ liệu từ máy AOI là căn cứ để nhóm này quyết định việc chấp nhận hay loại bỏ một lô hàng.1
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Ý nghĩa trong quy trình
+	质量检验员 (质检员)
+	Zhìliàng jiǎnyànyuán
+	Nhân viên QC
+	Kiểm tra trực tiếp ngoại quan sản phẩm theo tiêu chuẩn.1
+	质量保证 (QA)
+	Zhìliàng bǎozhèng
+	Đảm bảo chất lượng
+	Thiết lập quy trình để ngăn ngừa lỗi phát sinh từ đầu.
+	检验工
+	Jiǎnyàngōng
+	Nhân viên kiểm phẩm
+	Người vận hành các máy kiểm tra như AOI, SPI, X-Ray.4
+	维修工
+	Wéixiūgōng
+	Công nhân bảo trì
+	Chuyên xử lý các hỏng hóc cơ lý của máy móc trên dây chuyền.
+	仓库保管员
+	Cāngkù bǎoguǎnyuán
+	Thủ kho
+	Quản lý việc nhập/xuất linh kiện điện tử (linh kiện rời và cuộn).
+	采购员
+	Cǎigòuyuán
+	Nhân viên thu mua
+	Đảm bảo nguồn cung ứng vật tư và linh kiện đầu vào.1
+	操作员
+	Cāozuòyuán
+	Nhân viên vận hành
+	Công nhân trực tiếp đứng máy trong dây chuyền sản xuất.5
+	Hạ tầng CNTT và hệ thống quản trị sản xuất thông minh (Smart Factory)
+Trong môi trường xưởng sản xuất hiện đại, CNTT không còn chỉ là bộ phận hỗ trợ mà là nền tảng cốt lõi của mọi hoạt động. Kỹ sư IT trong nhà máy phải quản lý một hệ sinh thái kết hợp giữa CNTT truyền thống và Công nghệ vận hành (OT).2
+Hệ thống quản trị tích hợp: ERP, MES và SCADA
+Sự luân chuyển dữ liệu từ tầng thiết bị lên tầng quản trị được thực hiện qua các hệ thống phần mềm chuyên dụng. Việc nắm vững thuật ngữ về các hệ thống này giúp kỹ sư hiểu được bức tranh toàn cảnh về luồng dữ liệu.2
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Chức năng trong nhà máy
+	企业资源计划 (ERP)
+	Qǐyè zīyuán jìhuà
+	Hệ thống ERP
+	Quản lý tài chính, nhân sự và kế hoạch tổng thể.2
+	制造执行系统 (MES)
+	Zhìzào zhíxíng xìtǒng
+	Hệ thống MES
+	Theo dõi và điều hành trực tiếp quá trình sản xuất tại xưởng.
+	数据采集与监控 (SCADA)
+	Shùjù cǎijí yǔ jiānkòng
+	Hệ thống SCADA
+	Thu thập dữ liệu từ PLC và giám sát thiết bị theo thời gian thực.
+	智能制造
+	Zhìnéng zhìzào
+	Sản xuất thông minh
+	Khái niệm về việc tự động hóa và số hóa toàn bộ quy trình.9
+	工业 4.0
+	Gōngyè sì diǎn líng
+	Công nghiệp 4.0
+	Kỷ nguyên của sự kết nối giữa người, máy móc và dữ liệu.
+	物联网 (IoT)
+	Wù lián wǎng
+	Internet vạn vật
+	Kết nối các cảm biến và máy móc vào mạng internet.2
+	数据库
+	Shùjùkù
+	Cơ sở dữ liệu
+	Nơi lưu trữ thông tin sản xuất, lịch sử lỗi và thông số máy.
+	云计算
+	Yún jìsuàn
+	Điện toán đám mây
+	Sử dụng tài nguyên máy chủ từ xa để xử lý dữ liệu lớn.2
+	算法
+	Suànfǎ
+	Thuật toán
+	Các quy tắc xử lý dữ liệu cho phần mềm AOI hoặc dự báo lỗi.2
+	Hạ tầng mạng và bảo mật trong sản xuất
+Mạng công nghiệp thường đòi hỏi độ trễ cực thấp và tính bảo mật cao để tránh các cuộc tấn công gây ngừng trệ sản xuất. Kỹ sư IT cần chú ý đến các thuật ngữ về hạ tầng mạng sau.7
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Đặc tính kỹ thuật
+	服务器
+	Fúwùqì
+	Máy chủ (Server)
+	Thiết bị trung tâm lưu trữ dữ liệu MES và hình ảnh AOI.7
+	网络
+	Wǎngluò
+	Mạng
+	Hệ thống kết nối các máy tính và máy sản xuất.
+	路由器
+	Lùyóuqì
+	Bộ định tuyến (Router)
+	Điều phối luồng dữ liệu giữa các phân xưởng.10
+	交换机
+	Jiāohuànjī
+	Bộ chuyển mạch (Switch)
+	Kết nối các thiết bị trong cùng một mạng LAN.
+	防火墙
+	Fánghuǒqiáng
+	Tường lửa
+	Bảo vệ hệ thống sản xuất khỏi xâm nhập trái phép.2
+	宽带
+	Kuāndài
+	Băng thông rộng
+	Đảm bảo tốc độ truyền tải hình ảnh độ phân giải cao từ máy AOI.
+	网络协议
+	Wǎngluò xiéyì
+	Giao thức mạng
+	Các quy chuẩn truyền tin như TCP/IP, Modbus hoặc OPC-UA.
+	适配器
+	Shìpèiqì
+	Thiết bị ghép (Adapter)
+	Card chuyển đổi giao tiếp giữa các chuẩn máy khác nhau.7
+	加密
+	Jiāmì
+	Mã hóa
+	Đảm bảo tính bảo mật cho các bản vẽ thiết kế sản phẩm mới.2
+	无线网络
+	Wúxiàn wǎngluò
+	Mạng không dây (Wi-Fi)
+	Sử dụng cho các thiết bị cầm tay của nhân viên kiểm kho.
+	Phần cứng máy tính và thiết bị ngoại vi chuyên dụng
+Trong xưởng, máy tính không chỉ là thiết bị văn phòng mà còn là bộ điều khiển máy (Industrial PC). Kỹ sư cần nắm vững các bộ phận để thực hiện bảo trì nhanh.7
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Chức năng / Vị trí
+	电脑 / 计算机
+	Diànnǎo / Jìsuànjī
+	Máy vi tính
+	Thiết bị điều khiển chính cho mọi máy móc SMT.7
+	笔记本电脑
+	Bǐjìběn diànnǎo
+	Máy tính xách tay
+	Công cụ làm việc linh động cho kỹ sư khi debug tại hiện trường.
+	处理器 (CPU)
+	Chǔlǐqì
+	Bộ vi xử lý
+	"Bộ não" thực hiện các thuật toán xử lý hình ảnh AOI.7
+	内存 (RAM)
+	Nèicún
+	Bộ nhớ trong
+	Lưu trữ tạm thời dữ liệu khi máy đang vận hành chương trình.
+	硬盘
+	Yìngpán
+	Ổ cứng
+	Lưu trữ lâu dài firmware và các chương trình kiểm tra.11
+	主板
+	Zhǔbǎn
+	Bo mạch chủ
+	Nền tảng kết nối tất cả các linh kiện máy tính.3
+	显卡
+	Xiǎnkǎ
+	Card đồ họa
+	Quan trọng đối với máy AOI để hiển thị hình ảnh 3D của linh kiện.
+	屏幕 / 显示器
+	Píngmù / Xiǎnshìqì
+	Màn hình
+	Hiển thị giao diện điều khiển và kết quả kiểm tra.7
+	键盘
+	Jiànpán
+	Bàn phím
+	Thiết bị nhập dữ liệu và lệnh điều khiển.7
+	鼠标
+	Shǔbiāo
+	Con chuột
+	Thường dùng chuột quang (光学鼠标) để thao tác trên phần mềm.7
+	优盘 (U 盘)
+	Yōupán (U pán)
+	Ổ USB
+	Dùng để sao lưu dữ liệu hoặc cập nhật phần mềm offline.7
+	Công nghệ SMT và Chuyên ngành kỹ sư AOI
+Công nghệ dán bề mặt (SMT - Surface Mount Technology) là trái tim của việc sản xuất bảng mạch điện tử. AOI (Automated Optical Inspection) đóng vai trò là "chốt chặn" chất lượng trong quy trình này. Kỹ sư AOI cần hiểu sâu sắc cả về cơ lý của dây chuyền lẫn logic của thuật toán.5
+Tổng quan dây chuyền SMT và thiết bị phụ trợ
+Một dây chuyền SMT tiêu chuẩn là một chuỗi các máy móc tự động kết nối bằng băng tải. Mỗi mắt xích đều tiềm ẩn nguy cơ gây lỗi mà AOI phải phát hiện.5
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Vai trò trong dây chuyền
+	生产线
+	Shēngchǎnxiàn
+	Dây chuyền sản xuất
+	Tổng thể hệ thống từ nạp liệu đến đóng gói.5
+	印刷电路板 (PCB)
+	Yìnshuà diànlù bǎn
+	Bảng mạch in
+	Phôi nền để gắn các linh kiện điện tử lên trên.5
+	印刷机
+	Yìnshuàjī
+	Máy in kem hàn
+	Máy quét kem hàn lên các vị trí pad trên PCB.5
+	锡膏
+	Xīgāo
+	Kem hàn
+	Hỗn hợp bột thiếc và chất trợ hàn để dính linh kiện.5
+	刮刀
+	Guādāo
+	Lưỡi gạt
+	Công cụ gạt kem hàn qua lỗ stencil trong máy in.5
+	贴片机
+	Tiēpiànjī
+	Máy dán linh kiện
+	Máy gắp linh kiện từ cuộn liệu và đặt lên PCB.5
+	料盘 / 料带
+	Liàopán / Liàodài
+	Cuộn / Băng linh kiện
+	Hình thức đóng gói linh kiện để nạp vào máy dán.5
+	回流焊炉
+	Huíliú hàn lú
+	Lò hàn hồi lưu
+	Lò nhiệt làm chảy kem hàn để tạo mối liên kết vĩnh viễn.5
+	波峰焊机
+	Bōfēng hàn jī
+	Máy hàn sóng
+	Dùng cho linh kiện xuyên lỗ (Through-hole).5
+	传送带
+	Chuánsòngdài
+	Băng tải
+	Di chuyển bảng mạch giữa các công đoạn.5
+	传感器
+	Chuángǎnqì
+	Cảm biến
+	Phát hiện vị trí bảng mạch để điều khiển máy dừng/chạy.5
+	Quy trình làm việc của kỹ sư AOI
+Công việc của một kỹ sư AOI không chỉ là nhìn màn hình mà là một quy trình kỹ thuật bao gồm lập trình, tối ưu hóa và phân tích.3
+1. Lập trình (Programming - 编程): Sử dụng dữ liệu CAD hoặc bảng mạch chuẩn để tạo thư viện linh kiện.9
+2. Thiết lập tham số (Parameter Setting - 参数设置): Điều chỉnh các ngưỡng (threshold) để máy nhận diện đúng sai.5
+3. Hiệu chỉnh (Debugging - 调试): Chạy thử nghiệm để giảm thiểu các lỗi không đáng có.5
+4. Kiểm tra (Inspection - 检测/检验): Máy thực hiện quét hình ảnh và so sánh với mẫu chuẩn.5
+5. Phân tích lỗi (Defect Analysis - 故障分析): Xác định lỗi thuộc về khâu nào trong dây chuyền.5
+6. Xử lý hàng lỗi (Rework/Repair - 维修): Chuyển bảng mạch lỗi sang trạm sửa chữa (维修站).5
+Thuật ngữ chuyên sâu về kiểm tra và đo lường quang học
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Ứng dụng thực tế
+	检测机
+	Jiǎncè jī
+	Máy kiểm tra
+	Tên gọi chung cho các thiết bị AOI hoặc SPI.5
+	视觉识别
+	Shìjué shíbié
+	Nhận diện thị giác
+	Công nghệ dùng camera để "thấy" lỗi linh kiện.2
+	图像处理
+	Túxiàng chǔlǐ
+	Xử lý hình ảnh
+	Thuật toán làm rõ các chi tiết như chân linh kiện, mối hàn.
+	曝光
+	Bàoguāng
+	Độ phơi sáng
+	Chỉnh ánh sáng để camera chụp hình rõ nét nhất.
+	分辨率
+	Fēnbiànlǜ
+	Độ phân giải
+	Quyết định máy có thể soi được các linh kiện nhỏ (như 01005) hay không.
+	误报
+	Wùbào
+	Lỗi giả
+	Máy báo lỗi nhưng thực tế sản phẩm vẫn tốt (do bóng đổ, bụi).
+	漏检
+	Lòujiǎn
+	Lỗi lọt lưới
+	Máy không phát hiện ra lỗi thực sự (cực kỳ nguy hiểm).
+	良率
+	Liánglǜ
+	Tỷ lệ hàng đạt
+	Chỉ số đánh giá hiệu quả của toàn bộ dây chuyền.5
+	功能测试
+	Gōngnéng cèshì
+	Kiểm tra chức năng
+	Bước kiểm tra sau khi hàn xong để xem mạch có chạy không.5
+	Danh mục lỗi linh kiện và vấn đề kỹ thuật thường gặp
+Trong sản xuất điện tử, việc gọi tên đúng loại lỗi bằng tiếng Trung giúp kỹ sư nhanh chóng phản hồi cho bộ phận kỹ thuật công nghệ để điều chỉnh máy móc. Các lỗi này thường được phát hiện bởi AOI hoặc bằng mắt thường (Manual Inspection).5
+Lỗi liên quan đến Kem hàn và Mối hàn
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Mô tả hiện tượng
+	短路 / 电路短路
+	Duǎnlù
+	Ngắn mạch / Chập
+	Thiếc hàn dính giữa hai chân linh kiện không mong muốn.5
+	开路 / 电路开路
+	Kāilù
+	Mạch hở
+	Không có sự kết nối điện giữa chân linh kiện và pad.5
+	虚焊
+	Xūhàn
+	Hàn không chắc / Hàn giả
+	Mối hàn trông có vẻ ổn nhưng không tiếp xúc điện tốt.5
+	连锡
+	Liánxī
+	Cầu hàn / Dính thiếc
+	Hai hoặc nhiều điểm hàn bị dính vào nhau bởi thiếc dư.5
+	锡球 / 锡珠
+	Xīqiú / Xīzhū
+	Bi thiếc / Bóng thiếc
+	Các hạt thiếc nhỏ li ti bắn ra xung quanh mối hàn.5
+	焊点不良
+	Hàn diǎn bùliáng
+	Điểm hàn không tốt
+	Mối hàn bị rỗ, thiếu thiếc hoặc hình dạng không đạt tiêu chuẩn.5
+	印刷偏差
+	Yìnshuà piānchā
+	Lỗi in lệch
+	Kem hàn bị in lệch so với vị trí pad trên PCB.5
+	Lỗi liên quan đến Vị trí và Trạng thái linh kiện
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Nguyên nhân dự kiến
+	缺件
+	Quējiàn
+	Thiếu linh kiện
+	Linh kiện không được dán lên bảng mạch.12
+	错件
+	Cuòjiàn
+	Sai linh kiện
+	Máy dán nhầm loại linh kiện hoặc nhầm trị số.12
+	偏位
+	Piānwèi
+	Lệch vị trí
+	Linh kiện bị đặt lệch so với tâm của pad.5
+	极性反
+	Jíxìng fǎn
+	Ngược cực tính
+	Linh kiện có cực (như Diode, Tụ hóa) bị xoay ngược 180 độ.
+	侧立 / 立碑
+	Cèlì / Lìbēi
+	Linh kiện dựng đứng
+	Một đầu linh kiện bị nhấc lên khỏi pad (lỗi Tombstoning).12
+	反向
+	Fǎnxiàng
+	Ngược mặt
+	Linh kiện bị dán lật mặt dưới lên trên.
+	元件损坏
+	Yuánjiàn sǔnhuài
+	Hỏng linh kiện
+	Linh kiện bị nứt, vỡ do tác động cơ học hoặc nhiệt.5
+	料带断裂
+	Liàodài duànliè
+	Đứt cuộn linh kiện
+	Băng liệu bị đứt khiến máy dán không thể lấy linh kiện.5
+	Thuật ngữ về Linh kiện điện tử và Thiết bị đo lường
+Kỹ sư IT và AOI cần phân biệt rõ các loại linh kiện để quản lý danh mục vật tư trong MES và thiết lập thuật toán kiểm tra phù hợp cho từng loại.3
+Các loại linh kiện phổ biến
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Đặc điểm nhận dạng
+	电子元件
+	Diànzǐ yuánjiàn
+	Linh kiện điện tử
+	Tên gọi chung cho các phần tử trên mạch.5
+	电阻
+	Diànzǔ
+	Điện trở
+	Linh kiện cản trở dòng điện, thường có màu đen/xanh.3
+	电容
+	Diànróng
+	Tụ điện
+	Linh kiện lưu trữ điện năng (Tụ gốm, tụ hóa).3
+	二极管
+	Èrjíguǎn
+	Điốt
+	Chỉ cho dòng điện đi qua một chiều.3
+	三极管
+	Sāníguǎn
+	Transistor
+	Linh kiện bán dẫn có 3 chân, dùng để khuếch đại hoặc đóng cắt.
+	芯片
+	Xīnpiàn
+	Chip / Vi mạch
+	Phần tử phức tạp nhất, thường là các IC nhiều chân.3
+	集成电路
+	Jíchéng diànlù
+	Mạch tích hợp (IC)
+	Sự kết hợp nhiều linh kiện trên một đế bán dẫn.3
+	晶体管
+	Jīngtǐguǎn
+	Bóng bán dẫn
+	Thành phần cơ bản trong các mạch điện tử hiện đại.3
+	电感
+	Diàngǎn
+	Cuộn cảm
+	Linh kiện lưu trữ năng lượng dưới dạng từ trường.3
+	晶振
+	Jīngzhèn
+	Thạch anh
+	Tạo dao động cho các mạch xử lý số.
+	电源
+	Diànyuán
+	Nguồn điện
+	Cung cấp năng lượng cho toàn mạch vận hành.3
+	开关
+	Kāiguān
+	Công tắc
+	Dùng để đóng/ngắt mạch thủ công hoặc tự động.13
+	Dụng cụ và Thiết bị đo lường kỹ thuật
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Công dụng
+	万用表
+	Wànyòngbiǎo
+	Đồng hồ vạn năng
+	Đo điện áp, dòng điện, điện trở để debug lỗi mạch.
+	示波器
+	Shìbōqì
+	Máy hiện sóng
+	Xem dạng tín hiệu điện theo thời gian (rất quan trọng cho IT).
+	电烙铁
+	Diànlàotiě
+	Mỏ hàn điện
+	Dùng để sửa thủ công các lỗi hở chân hoặc thay linh kiện.
+	吸锡器
+	Xīxīqì
+	Máy hút thiếc
+	Hỗ trợ tháo linh kiện ra khỏi bảng mạch.
+	放大镜
+	Fàngdàjìng
+	Kính lúp
+	Soi các lỗi ngoại quan nhỏ mà mắt thường khó thấy.
+	显微镜
+	Xiǎnwēijìng
+	Kính hiển vi
+	Dùng cho các linh kiện siêu nhỏ như 01005.13
+	电笔
+	Diànbǐ
+	Bút thử điện
+	Kiểm tra xem thiết bị có bị rò điện hay không.13
+	电动螺丝刀
+	Diàndòng luósīdāo
+	Tua vít điện
+	Dùng để tháo lắp vỏ máy hoặc cố định PCB vào jig.5
+	Ngôn ngữ giao tiếp chuyên dụng trong nhà máy và văn phòng
+Làm việc trong một xưởng sản xuất có yếu tố nước ngoài (Trung Quốc, Đài Loan) yêu cầu khả năng giao tiếp đa dạng, từ các mệnh lệnh công việc khô khan đến các trao đổi về chế độ đãi ngộ và đời sống.14
+Giao tiếp trong vận hành và báo cáo công việc
+Khi máy móc gặp sự cố hoặc cần thay đổi kế hoạch, sự nhanh chóng và chính xác trong ngôn ngữ là chìa khóa.8
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Ngữ cảnh sử dụng
+	开始工作
+	Kāishǐ gōngzuò
+	Bắt đầu làm việc
+	Lệnh bắt đầu ca làm hoặc sau giờ nghỉ.17
+	下班了
+	Xiàbān le
+	Hết giờ làm rồi
+	Thông báo kết thúc ca.17
+	这台机器需要维修
+	Zhè tái jīqì xūyào wéixiū
+	Máy này cần bảo trì
+	Báo cho bộ phận bảo trì khi máy hỏng.8
+	生产进度如何？
+	Shēngchǎn jìndù rúhé?
+	Tiến độ sản xuất thế nào?
+	Chủ quản hỏi về sản lượng hiện tại.14
+	今天的生产计划是什么？
+	Jīntiān de shēngchǎn jìhuà shì shénme?
+	Kế hoạch sản xuất hôm nay là gì?
+	Hỏi về mã hàng (model) sẽ chạy trong ngày.8
+	机器运行得怎么样？
+	Jīqì yùnxíng de zěnme yàng?
+	Máy móc hoạt động thế nào?
+	Kiểm tra tình trạng ổn định của thiết bị.8
+	请加快一点
+	Qǐng jiākuài yīdiǎn
+	Làm ơn nhanh lên một chút
+	Khi dây chuyền bị chậm tiến độ.17
+	不要出错
+	Bùyào chūcuò
+	Đừng làm sai
+	Lời nhắc nhở về chất lượng.17
+	我不懂 / 我不明白
+	Wǒ bù dǒng / Wǒ bù míngbái
+	Tôi không hiểu
+	Phản hồi khi chỉ dẫn không rõ ràng.17
+	帮我一下
+	Bāng wǒ yīxià
+	Giúp tôi một chút
+	Nhờ vả đồng nghiệp khi quá tải.15
+	Hội họp và Giải quyết vấn đề (Problem Solving)
+Trong các cuộc họp sáng (Morning Meeting) hoặc họp khẩn xử lý sự cố chất lượng, kỹ sư AOI thường phải giải thích về các dữ liệu lỗi.15
+* Bắt đầu cuộc họp: “我们现在开始开会吧” (Wǒmen xiànzài kāishǐ kāihuì ba) — Chúng ta bắt đầu họp nào.15
+* Thảo luận tiến độ: “我们需要讨论一下项目的进度” (Wǒmen xūyào tǎolùn yīxià xiàngmù de jìndù) — Chúng ta cần thảo luận về tiến độ dự án.18
+* Hỏi về giải pháp: “我们如何解决这个问题？” (Wǒmen rúhé jiějué zhège wèntí?) — Chúng ta giải quyết vấn đề này như thế nào?.15
+* Yêu cầu báo cáo: “请检查一下质量控制报告” (Qǐng jiǎnchá yīxià zhìliàng kòngzhì bàogào) — Vui lòng kiểm tra báo cáo kiểm soát chất lượng.8
+* Phê duyệt/Đồng ý: “所有赞同的，请举手” (Suǒyǒu zàntóng de, qǐng jǔshǒu) — Những ai đồng ý xin giơ tay.15
+* Rút kinh nghiệm: “下次不要再犯这样的错误了” (Xiàcì bùyào zài fàn zhèyàng de cuòwù le) — Lần sau đừng phạm lỗi như thế này nữa.15
+Chế độ làm việc, Tiền lương và Phụ cấp
+Hiểu rõ quyền lợi giúp người lao động an tâm làm việc và đảm bảo sự công bằng trong quản lý nhân sự.1
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Giải thích
+	加班
+	Jiābān
+	Tăng ca
+	Làm thêm giờ ngoài 8 tiếng quy định.1
+	加班工资
+	Jiābān gōngzī
+	Lương tăng ca
+	Tiền lương tính theo hệ số (thường là 1.5, 2.0 hoặc 3.0).1
+	夜班
+	Yèbān
+	Ca đêm
+	Thường bắt đầu từ 20:00 đến 08:00 sáng hôm sau.1
+	白班 / 日班
+	Báibān / Rìbān
+	Ca ngày
+	Làm việc trong khung giờ hành chính.1
+	津贴 / 补贴
+	Jīntiè / Bǔtiē
+	Phụ cấp
+	Các khoản hỗ trợ (ăn uống, đi lại, ca đêm).16
+	薪水 / 工资
+	Xīnshuǐ / Gōngzī
+	Tiền lương
+	Thu nhập hàng tháng của người lao động.1
+	全薪
+	Quánxīn
+	Lương đầy đủ
+	Trả 100% lương (ví dụ khi nghỉ phép có hưởng lương).1
+	奖金
+	Jiǎngjīn
+	Tiền thưởng
+	Thưởng hiệu suất, thưởng chuyên cần hoặc thưởng cuối năm.1
+	请假
+	Qǐngjià
+	Xin nghỉ
+	Đăng ký nghỉ việc tạm thời có lý do.16
+	病假
+	Bìngjià
+	Nghỉ ốm
+	Cần có đơn xin nghỉ (病假条) kèm theo giấy khám bệnh.1
+	事假
+	Shìjià
+	Nghỉ việc riêng
+	Nghỉ do có việc gia đình, thường không được trả lương.1
+	旷工
+	Kuànggōng
+	Nghỉ không phép
+	Tự ý bỏ việc mà không thông báo cho quản lý.1
+	解雇 / 开除
+	Jiěgù / Kāichú
+	Sa thải / Đuổi việc
+	Chấm dứt hợp đồng lao động do vi phạm kỷ luật.1
+	An toàn lao động và Quy chuẩn 5S trong nhà máy
+Tại các nhà máy công nghệ cao, an toàn không chỉ là khẩu hiệu mà là một phần của quy trình vận hành. Các biển báo và hướng dẫn an toàn thường được viết bằng tiếng Trung cần được kỹ sư nắm lòng để bảo vệ bản thân và đồng nghiệp.1
+Các biển báo và Lời nhắc an toàn
+* An toàn là trên hết: “安全第一” (Ānquán dì-yī) — Khẩu hiệu phổ biến nhất tại mọi cổng xưởng.
+* Chú ý an toàn: “注意安全” (Zhùyì ānquán) — Lời nhắc thường xuyên của tổ trưởng khi bắt đầu ca.17
+* Cẩn thận: “小心” (Xiǎoxīn) — Dùng cho các khu vực nguy hiểm như điện cao áp hoặc xe nâng di chuyển.17
+* Cấm hút thuốc: “禁止吸烟” (Jìnzhǐ xīyān) — Phòng chống cháy nổ trong khu vực có dung môi hữu cơ.17
+* Đeo thiết bị bảo hộ: “戴口罩” (Dài kǒuzhào - Đeo khẩu trang), “戴手套” (Dài shǒutào - Đeo găng tay), “戴安全帽” (Dài ānquán mào - Đeo mũ bảo hiểm).8
+* Tiếp đất (Earthing): “接地” (Jiēdì) — Rất quan trọng trong xưởng điện tử để tránh tĩnh điện (ESD) làm hỏng linh kiện.
+Khái niệm 5S và Quản lý hiện trường
+Môi trường sạch sẽ là điều kiện bắt buộc để các máy quang học như AOI hoạt động chính xác.
+1. Sàng lọc (Seiri - 整理): Loại bỏ những thứ không cần thiết tại nơi làm việc.
+2. Sắp xếp (Seiton - 整顿): Để vật dụng đúng vị trí để dễ tìm, dễ lấy.
+3. Sạch sẽ (Seiso - 清扫): Vệ sinh máy móc, đặc biệt là thấu kính camera AOI.
+4. Săn sóc (Seiketsu - 清洁): Duy trì 3 tiêu chuẩn trên một cách định kỳ.
+5. Sẵn sàng (Shitsuke - 素养): Tự giác tuân thủ nội quy và tác phong công nghiệp.
+Phân tích chuyên sâu: Sự giao thoa giữa CNTT và AOI trong tương lai
+Vai trò của một kỹ sư IT/AOI đang dịch chuyển từ việc "vận hành máy" sang "quản trị dữ liệu thông minh". Điều này đòi hỏi người kỹ sư phải cập nhật các thuật ngữ về các công nghệ mới nổi đang được triển khai thực tế tại các nhà máy hàng đầu.2
+Ứng dụng Trí tuệ Nhân tạo (AI) trong Kiểm tra lỗi
+Các máy AOI truyền thống dựa trên so sánh pixel (Template Matching), nhưng AOI thế hệ mới sử dụng Deep Learning để phân biệt lỗi thật và lỗi giả hiệu quả hơn.2
+
+
+Hán ngữ
+	Phiên âm
+	Tiếng Việt
+	Vai trò trong AOI
+	人工智能 (AI)
+	Réngōng zhìnéng
+	Trí tuệ nhân tạo
+	Giúp máy tự học cách phân loại lỗi mới.2
+	机器学习
+	Jīqì xuéxí
+	Máy học
+	Quá trình huấn luyện máy với hàng nghìn hình ảnh lỗi.2
+	深度学习
+	Shēndù xuéxí
+	Học sâu
+	Thuật toán mạng nơ-ron để nhận diện các lỗi phức tạp.2
+	神经网络
+	Shénjīng wǎngluò
+	Mạng nơ-ron
+	Mô phỏng cách não người xử lý hình ảnh bảng mạch.2
+	数据采集
+	Shùjù cǎijí
+	Thu thập dữ liệu
+	Bước đầu tiên để xây dựng mô hình AI cho máy kiểm tra.9
+	Hệ thống kết nối và Nhà máy không người (Lights-out Factory)
+Khái niệm "nhà máy tắt đèn" nơi robot và hệ thống tự động làm việc 24/7 yêu cầu kỹ sư IT phải quản lý hệ thống từ xa thông qua hạ tầng mạng cực mạnh.2
+* Sản xuất thông minh (Smart Manufacturing - 智能制造): Sự tích hợp cao độ giữa hệ thống quản trị và máy móc thực thi.2
+* Hợp tác người - máy (Cobot - 人机协作): Robot làm việc cùng con người trong các khâu lắp ráp tinh vi.2
+* Mô phỏng ảo (Digital Twin - 虚拟仿真): Tạo ra một bản sao kỹ thuật số của dây chuyền AOI để chạy thử nghiệm trước khi vận hành thật.2
+* Công nghệ 5G (5G 技术): Cho phép truyền tải dữ liệu hình ảnh 4K/8K từ AOI lên cloud mà không có độ trễ.3
+Những lưu ý về văn hóa và tác phong khi làm việc tại xưởng Trung Quốc
+Bên cạnh ngôn ngữ, hiểu về văn hóa làm việc (Work Ethics) của người Trung Quốc sẽ giúp kỹ sư IT/AOI thăng tiến nhanh hơn và tránh các xung đột không đáng có.15
+1. Tính kỷ luật về thời gian: Luôn đi làm đúng giờ hoặc sớm hơn 5-10 phút. Việc "hết giờ làm" (下班) thường linh hoạt, đôi khi cần ở lại hỗ trợ nếu dây chuyền đang gặp sự cố lớn.
+2. Sự tôn trọng cấp trên: Khi giao tiếp với Quản đốc (主任) hoặc Giám đốc (经理), nên dùng ngôn ngữ trang trọng và lắng nghe chỉ dẫn trước khi đưa ra ý kiến phản hồi.
+3. Báo cáo trung thực: Trong kỹ thuật, lỗi là lỗi. Tuyệt đối không che giấu lỗi lọt lưới (漏检) vì nó có thể dẫn đến việc khách hàng trả hàng toàn bộ lô, gây thiệt hại hàng triệu đô la.
+4. Tinh thần học hỏi: Người Trung Quốc rất coi trọng những kỹ sư chịu khó mày mò máy móc. Đừng ngần ngại hỏi "Cái này dùng thế nào?" (这怎么用? - Zhè zěnme yòng?) khi tiếp xúc với thiết bị mới.17
+Việc sở hữu một kho tàng từ vựng đầy đủ từ Hán ngữ, Pinyin đến nghĩa tiếng Việt như trên là bước đệm vững chắc nhất. Tuy nhiên, kiến thức này chỉ thực sự sống động khi được người kỹ sư áp dụng vào từng bảng báo cáo lỗi hàng ngày, từng cuộc trao đổi với đồng nghiệp và từng giờ phút vận hành máy tại hiện trường. Sự kết hợp giữa năng lực chuyên môn CNTT xuất sắc và kỹ năng ngôn ngữ nhuần nhuyễn sẽ biến người kỹ sư thành một chuyên gia không thể thay thế trong chuỗi giá trị toàn cầu hiện nay.
+Nguồn trích dẫn
+1. Từ vựng tiếng Trung trong công xưởng - Trung tâm tiếng Trung SOFL, truy cập vào tháng 3 12, 2026, https://trungtamtiengtrung.edu.vn/blog/tu-vung-tieng-trung-trong-cong-xuong-nha-may-1385/
+2. Từ Vựng Tiếng Trung Về Công Nghệ, truy cập vào tháng 3 12, 2026, https://online.tiengtrung.vn/tin-tuc/tu-vung-tieng-trung-ve-cong-nghe-nd497543.html
+3. Tiếng Trung Công Xưởng Điện Tử - Hoa Văn SHZ, truy cập vào tháng 3 12, 2026, https://hoavanshz.com/tieng-trung-cong-xuong-dien-tu-882
+4. Từ vựng tiếng Trung giao tiếp trong công xưởng thông dụng nhất - MCBooks, truy cập vào tháng 3 12, 2026, https://mcbooks.vn/tu-vung-tieng-trung-giao-tiep-trong-cong-xuong/
+5. 600 từ vựng tiếng Trung ngành sản xuất SMT | PDF - Scribd, truy cập vào tháng 3 12, 2026, https://www.scribd.com/document/805748455/600-t%E1%BB%AB-v%E1%BB%B1ng-ti%E1%BA%BFng-Trung-nganh-s%E1%BA%A3n-xu%E1%BA%A5t-SMT
+6. Từ vựng tiếng Trung ngành Kỹ thuật kèm mẫu câu giao tiếp - Thanhmaihsk, truy cập vào tháng 3 12, 2026, https://thanhmaihsk.edu.vn/tu-vung-tieng-trung-nganh-ky-thuat/
+7. Từ vựng tiếng Trung chuyên ngành công nghệ thông tin, truy cập vào tháng 3 12, 2026, https://trungtamtiengtrung.edu.vn/blog/tu-vung-tieng-trung-chuyen-nganh-cong-nghe-thong-tin-1316/
+8. Tiếng Trung chủ đề Công Xưởng: Từ vựng, mẫu câu, hội thoại, truy cập vào tháng 3 12, 2026, https://ctihsk.edu.vn/tieng-trung-chu-de-cong-xuong/
+9. Từ vựng tự động hoá | Cộng đồng Hanzii, truy cập vào tháng 3 12, 2026, https://hanzii.net/community/detail/rynmTu0we6T20Ky2UNjZk36zWj6ZOFDX?hl=vi
+10. 110 TỪ VỰNG TIẾNG TRUNG CHỦ ĐỀ CÔNG NGHỆ THÔNG TIN, truy cập vào tháng 3 12, 2026, https://tiengtrungcoban.vn/tieng-trung-chu-de-cong-nghe-thong-tin/
+11. 100+ Từ vựng tiếng Trung về linh kiện điện tử kèm phiên âm - MCBooks, truy cập vào tháng 3 12, 2026, https://mcbooks.vn/tu-vung-tieng-trung-ve-linh-kien-dien-tu/
+12. Những lỗi thường gặp trong sản xuất - gia công SMT - Meka, truy cập vào tháng 3 12, 2026, https://meka.vn/nhung-loi-thuong-gap-trong-san-xuat-gia-cong-smt/
+13. 350+ từ vựng tiếng Trung công xưởng, mẫu câu giao tiếp, truy cập vào tháng 3 12, 2026, https://prepedu.com/vi/blog/tu-vung-tieng-trung-trong-cong-xuong
+14. MẪU CÂU GIAO TIẾP TIẾNG TRUNG CHỦ ĐỀ SẢN XUẤT - Hoa Ngữ Thành Nhân, truy cập vào tháng 3 12, 2026, https://hoanguthanhnhan.com/mau-cau-giao-tiep-tieng-trung-chu-de-san-xuat.html
+15. Học các mẫu câu giao tiếp tiếng Trung dùng trong công ty, xí nghiệp, công xưởng, truy cập vào tháng 3 12, 2026, https://trungtamtiengtrung.edu.vn/blog/hoc-cac-mau-cau-giao-tiep-tieng-trung-dung-trong-cong-ty-xi-nghiep-cong-xuong-1644/
+16. Các câu tiếng Trung bồi chủ đề giao tiếp công xưởng thông dụng - tiengtrungtainha.com, truy cập vào tháng 3 12, 2026, https://tiengtrungtainha.com/cac-cau-tieng-trung-boi-chu-de-giao-tiep-cong-xuong-thong-dung/
+17. Top 50 Câu Giao Tiếp Tiếng Trung Công Xưởng - Aselina, truy cập vào tháng 3 12, 2026, https://www.aselina.com.vn/2025/05/top-50-cau-giao-tiep-tieng-trung-cong-xuong.html
+18. MẪU CÂU GIAO TIẾP TIẾNG TRUNG CHỦ ĐỀ NGHIỆP VỤ - Hoa Ngữ Thành Nhân, truy cập vào tháng 3 12, 2026, https://hoanguthanhnhan.com/20217.html
