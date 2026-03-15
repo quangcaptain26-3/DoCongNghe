@@ -1,0 +1,311 @@
+Ok 👍 câu này **rất thực tế luôn**, vì đi làm AOI mà bị hỏi kiểu:
+
+> “Em hiểu quy trình vận hành AOI chưa?”
+> “Flow chạy model như thế nào?”
+> “AOI kiểm tra những gì?”
+
+→ nếu trả lời lan man là **mất điểm ngay**.
+
+Mình sẽ giúp bạn **chuẩn bị sẵn câu trả lời kiểu kỹ sư — gọn — logic — nghe là biết có tìm hiểu**.
+
+Bạn có thể **học thuộc hoặc nói theo ý mình**.
+
+---
+
+# ✅ Cách trả lời khi sếp hỏi: “Em hiểu quy trình AOI chưa?”
+
+Bạn có thể trả lời như này:
+
+---
+
+## 🎤 Câu trả lời chuẩn (gọn — chuyên nghiệp)
+
+> Dạ em đã tìm hiểu tổng thể flow AOI.
+> Quy trình vận hành gồm 3 phần chính: tạo dữ liệu và train model, deploy model lên máy AOI, và luồng inspection chạy thực tế trên line.
+
+---
+
+## 🔵 Phần 1 — Data & Training
+
+> Đầu tiên sẽ thu thập ảnh sản phẩm theo từng station với điều kiện camera và ánh sáng cố định.
+> Sau đó tạo Golden template để định vị sản phẩm, rồi gán nhãn vùng cần kiểm tra như ốc vít, vỏ ngoài, PCB, vùng xung quanh và barcode.
+> Từ dataset này sẽ train các model như detection để tìm vùng, localization để căn chỉnh vị trí, và classification để phân loại lỗi OK hoặc NG.
+
+👉 Câu này nói ra là **biết flow AI công nghiệp luôn**.
+
+---
+
+## 🔵 Phần 2 — Deploy model
+
+> Sau khi model đạt accuracy yêu cầu thì sẽ export weight, upload lên OTA server.
+> Máy AOI trên line sẽ download version mới và restart service để chạy inspection version mới.
+
+👉 Sếp nghe là biết bạn hiểu **OTA / version control**.
+
+---
+
+## 🔵 Phần 3 — Luồng chạy inspection trên line
+
+> Khi sản phẩm vào station thì PLC trigger hoặc scan barcode.
+> Camera chụp ảnh, hệ thống sẽ localization để căn chỉnh vị trí sản phẩm trước.
+> Sau đó detect các vùng kiểm tra, crop ROI và chạy model tương ứng cho từng hạng mục như check ốc vít, ngoại quan vỏ, lỗi PCB, vùng mép và đọc barcode.
+> Nếu tất cả ROI OK thì pass sản phẩm, còn nếu có một vùng NG thì hệ thống reject và lưu ảnh lỗi để trace.
+
+👉 Đây là **đoạn quan trọng nhất** — nên nói rõ.
+
+---
+
+## 🔥 Câu chốt rất mạnh (nên nói)
+
+> Theo em thì bước localization là quan trọng nhất vì nếu định vị sai thì crop sai vùng sẽ gây false NG hoặc miss defect.
+
+👉 Nói câu này là **điểm cộng cực mạnh**
+→ vì đúng mindset AOI engineer.
+
+---
+
+# ⭐ Nếu sếp hỏi sâu hơn: “AOI kiểm tra những gì?”
+
+Bạn trả lời:
+
+> Hiện hệ thống AOI bên mình kiểm tra nhiều hạng mục gồm:
+>
+> * Kiểm tra thiếu hoặc sai vị trí ốc vít
+> * Kiểm tra ngoại quan vỏ như xước, bẩn, băng dính lỗi
+> * Kiểm tra lỗi mạch PCB như thiếu linh kiện hoặc lệch cực
+> * Kiểm tra vùng xung quanh sản phẩm để phát hiện vật lạ hoặc lỗi mép
+> * Và đọc mã vạch để đảm bảo traceability
+
+---
+
+# ⭐ Nếu sếp hỏi kiểu kỹ thuật hơn
+
+“Em nghĩ AOI dễ fail ở đâu?”
+
+Bạn trả lời:
+
+> Theo em AOI dễ fail nhất ở ba điểm:
+>
+> * ánh sáng không ổn định
+> * sản phẩm lệch vị trí gây sai localization
+> * dataset lỗi không đủ hoặc không cân bằng
+
+🔥 Trả lời vậy là **rất đúng thực tế nhà máy**.
+
+---
+
+# ⭐ Nếu muốn gây ấn tượng hơn nữa (optional)
+
+Bạn có thể nói thêm:
+
+> Em nghĩ nên tách model theo từng nhóm lỗi như screw model, cosmetic model và PCB model để tăng accuracy và dễ maintain.
+
+→ Câu này nghe là biết **có tư duy cải tiến**.
+
+---
+
+Nếu bạn muốn, mình có thể:
+
+✅ Viết cho bạn **1 đoạn script trả lời hoàn chỉnh kiểu hội thoại thật** (sếp hỏi → bạn trả lời)
+✅ Làm luôn **bộ câu hỏi AOI thường bị hỏi khi review kỹ sư**
+✅ Hoặc luyện cho bạn **mock interview AOI engineer**
+
+Sếp bạn là người **technical sâu AI / vision hay kiểu production manager** vậy?
+
+AOI SYSTEM FULL OPERATION FLOW / QUY TRÌNH VẬN HÀNH AOI
+
+1. OVERVIEW / TỔNG QUAN
+
+EN:
+AOI system is used to inspect multiple defect categories on production line including:
+- Screw inspection
+- Housing / cosmetic inspection
+- PCB inspection
+- Surrounding area inspection
+- Barcode / QR inspection
+
+Core principle:
+AOI = Localization -> Crop ROI -> Classification -> Decision
+
+VI:
+Hệ thống AOI dùng để kiểm tra nhiều loại lỗi trên line sản xuất gồm:
+- Kiểm tra ốc vít
+- Kiểm tra vỏ / ngoại quan
+- Kiểm tra mạch PCB
+- Kiểm tra vùng xung quanh sản phẩm
+- Kiểm tra mã vạch / QR
+
+Nguyên lý cốt lõi:
+AOI = Định vị -> Cắt vùng ROI -> Phân loại -> Quyết định
+
+
+2. DATA COLLECTION & DATASET CREATION / THU THẬP DỮ LIỆU & TẠO DATASET
+
+Flow:
+
+Start / Bắt đầu
+ -> Capture product images with fixed camera & lighting
+    Chụp ảnh sản phẩm với camera và ánh sáng cố định
+
+ -> Upload images to server / data manager
+    Upload ảnh lên server / hệ thống quản lý dữ liệu
+
+ -> Create Golden Template (reference alignment)
+    Tạo Golden Template để làm chuẩn định vị
+
+ -> Localization labeling
+    Gán nhãn điểm chuẩn định vị
+
+ -> Detection labeling (define regions)
+    Gán nhãn vùng kiểm tra: ốc / vỏ / PCB / barcode / xung quanh
+
+ -> Defect annotation
+    Gán nhãn lỗi:
+        OK
+        NG_SCREW_MISSING
+        NG_SCREW_SHIFT
+        NG_DIRTY
+        NG_SCRATCH
+        NG_TAPE
+        NG_SHELL_DAMAGE
+        NG_PCB_DEFECT
+        NG_BARCODE
+
+ -> Split dataset (Train / Val / Test)
+    Chia dataset thành Train / Validation / Test
+
+ -> Train models
+    Train model Detection + Localization + Classification
+
+ -> Validate accuracy
+    Đánh giá độ chính xác / confusion matrix
+
+ -> Publish model version
+    Publish version model
+
+End / Kết thúc
+
+
+3. MODEL DEPLOYMENT (OTA) / TRIỂN KHAI MODEL
+
+Train Model Ready / Model train xong
+ -> Export weight file (ONNX / TensorRT / PT)
+    Xuất file weight
+
+ -> Upload to OTA server
+    Upload lên server OTA
+
+ -> AOI machine check version
+    Máy AOI kiểm tra version mới
+
+ -> Download model
+    Tải model
+
+ -> Extract package
+    Giải nén model
+
+ -> Restart inference service
+    Restart service chạy AI
+
+ -> Run new inspection
+    Chạy version inspection mới
+
+
+4. RUNTIME INSPECTION FLOW / LUỒNG CHẠY TRÊN LINE
+
+Start Inspection / Bắt đầu kiểm tra
+ -> Receive PLC trigger or scan barcode
+    Nhận trigger PLC hoặc quét barcode
+
+ -> Camera capture image
+    Camera chụp ảnh
+
+ -> Save raw image
+    Lưu ảnh gốc
+
+ -> Send metadata to server
+    Gửi metadata lên server
+
+ -> Product localization
+    Định vị sản phẩm (template match / alignment)
+
+ -> Detect inspection regions
+    Detect vùng kiểm tra
+
+ -> Crop ROI list
+    Cắt danh sách ROI
+
+ -> Initialize FINAL_RESULT = OK
+    Khởi tạo kết quả tổng = OK
+
+For each ROI / Với mỗi ROI:
+
+If ROI = SCREW:
+    Run screw classifier
+    Detect thiếu / lệch / sai loại / hỏng đầu vít
+    Nếu lỗi -> FINAL_RESULT = NG_SCREW
+
+If ROI = SHELL:
+    Run cosmetic model
+    Detect xước / bẩn / keo / băng dính / móp
+    Nếu lỗi -> FINAL_RESULT = NG_COSMETIC
+
+If ROI = PCB:
+    Run PCB defect model
+    Detect thiếu linh kiện / sai cực / lệch / lỗi hàn
+    Nếu lỗi -> FINAL_RESULT = NG_PCB
+
+If ROI = SURROUND:
+    Run edge inspection model
+    Detect xước mép / vật lạ / bụi / lệch khe
+    Nếu lỗi -> FINAL_RESULT = NG_SURROUND
+
+If ROI = BARCODE:
+    Detect & decode barcode
+    Kiểm tra đọc được / đúng format / đúng rule
+    Nếu lỗi -> FINAL_RESULT = NG_BARCODE
+
+
+Final Decision / Quyết định cuối:
+
+If FINAL_RESULT == OK:
+    Send PASS signal to PLC
+    Update yield
+    Save OK result
+
+Else:
+    Reject product
+    Save ảnh lỗi + loại lỗi + version model
+    Log MES / traceability
+
+
+5. DATABASE STRUCTURE / CẤU TRÚC LƯU TRỮ
+
+Store / Lưu:
+- Image path / đường dẫn ảnh
+- Barcode / serial
+- Inspection time / thời gian
+- Station ID
+- Model version
+- ROI result
+- Final result
+- Defect category
+- Confidence score
+
+
+6. CRITICAL NOTES / LƯU Ý KỸ THUẬT
+
+EN:
+- Localization accuracy is the most critical factor
+- Stable lighting and mechanical positioning are mandatory
+- Separate models per defect category improves accuracy
+- Handle defect imbalance using augmentation / focal loss
+- Barcode decoding should use dedicated library
+
+VI:
+- Định vị sai là nguyên nhân fail lớn nhất
+- Ánh sáng và vị trí gá sản phẩm phải ổn định
+- Nên tách model theo từng loại lỗi
+- Cần xử lý mất cân bằng dữ liệu lỗi
+- Barcode nên decode bằng thư viện chuyên dụng
+
