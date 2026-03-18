@@ -1,0 +1,6 @@
+note:
+- Các trạm TDH của các chuyền báo lỗi thì phải đồng bộ lỗi với nhau về quá trình hoạt động qua OII
+- 16 trạm làm sao để báo được lỗi.
+- AGV k cần đường đi, chỉ cần hiện trạng thái xe đang ra sao, show ra hiệu suất sử dụng xe AGV
+- Show các trạm AOI đang bị lỗi hay không, có thể show tiến độ của AOI.
+
