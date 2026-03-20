@@ -1,0 +1,203 @@
+"""
+Xem ảnh ALL PASS / FAIL trong folder
+Yêu cầu: Python 3 + Pillow (pip install Pillow)
+Tkinter có sẵn trong Python, không cần cài thêm.
+"""
+
+import os
+import tkinter as tk
+from tkinter import filedialog, messagebox, ttk
+from PIL import Image, ImageTk
+
+
+# ── Cấu hình ──────────────────────────────────────────────────────────────
+THUMB_W, THUMB_H = 200, 150   # kích thước thumbnail
+COLS = 4                       # số cột trong grid
+BG        = "#1e1e2e"
+PASS_CLR  = "#40c057"
+FAIL_CLR  = "#fa5252"
+HEAD_CLR  = "#2d2d44"
+LABEL_FG  = "#ffffff"
+# ──────────────────────────────────────────────────────────────────────────
+
+
+def scan_folder(folder):
+    """Trả về (all_pass_list, fail_list) – list các đường dẫn đầy đủ."""
+    all_pass, fail = [], []
+    for fname in sorted(os.listdir(folder)):
+        if not fname.lower().endswith(".jpg"):
+            continue
+        upper = fname.upper()
+        path = os.path.join(folder, fname)
+        if "ALL PASS" in upper:
+            all_pass.append(path)
+        elif "FAIL" in upper:
+            fail.append(path)
+    return all_pass, fail
+
+
+def make_thumb(path):
+    """Tạo thumbnail PIL Image, giữ tỉ lệ, nền đen."""
+    try:
+        img = Image.open(path)
+        img.thumbnail((THUMB_W, THUMB_H), Image.LANCZOS)
+        bg = Image.new("RGB", (THUMB_W, THUMB_H), (30, 30, 46))
+        off_x = (THUMB_W - img.width) // 2
+        off_y = (THUMB_H - img.height) // 2
+        bg.paste(img, (off_x, off_y))
+        return ImageTk.PhotoImage(bg)
+    except Exception:
+        bg = Image.new("RGB", (THUMB_W, THUMB_H), (80, 80, 80))
+        return ImageTk.PhotoImage(bg)
+
+
+class App(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Image Viewer – ALL PASS / FAIL")
+        self.configure(bg=BG)
+        self.geometry("960x700")
+        self.resizable(True, True)
+        self._thumbs = []   # giữ reference tránh GC xóa ảnh
+        self._build_ui()
+
+    def _build_ui(self):
+        top = tk.Frame(self, bg=HEAD_CLR, pady=8)
+        top.pack(fill="x")
+
+        tk.Label(top, text=" Folder:", bg=HEAD_CLR, fg=LABEL_FG,
+                 font=("Segoe UI", 11)).pack(side="left", padx=(12, 4))
+
+        self.path_var = tk.StringVar()
+        tk.Entry(top, textvariable=self.path_var, width=55,
+                 font=("Segoe UI", 10)).pack(side="left", padx=4)
+
+        tk.Button(top, text="Chọn folder", command=self._browse,
+                  bg="#4c6ef5", fg="white", relief="flat",
+                  font=("Segoe UI", 10, "bold"),
+                  padx=10).pack(side="left", padx=4)
+
+        tk.Button(top, text="▶  Xem", command=self._load,
+                  bg=PASS_CLR, fg="white", relief="flat",
+                  font=("Segoe UI", 10, "bold"),
+                  padx=10).pack(side="left", padx=4)
+
+        self.stat_frame = tk.Frame(self, bg=BG)
+        self.stat_frame.pack(fill="x", padx=12, pady=6)
+
+        self.canvas = tk.Canvas(self, bg=BG, highlightthickness=0)
+        vsb = ttk.Scrollbar(self, orient="vertical", command=self.canvas.yview)
+        self.canvas.configure(yscrollcommand=vsb.set)
+        vsb.pack(side="right", fill="y")
+        self.canvas.pack(fill="both", expand=True)
+
+        self.inner = tk.Frame(self.canvas, bg=BG)
+        self.canvas_win = self.canvas.create_window((0, 0), window=self.inner,
+                                                    anchor="nw")
+        self.inner.bind("<Configure>", self._on_inner_resize)
+        self.canvas.bind("<Configure>", self._on_canvas_resize)
+        self.canvas.bind_all("<MouseWheel>", self._on_scroll)
+        self.canvas.bind_all("<Button-4>",   self._on_scroll)
+        self.canvas.bind_all("<Button-5>",   self._on_scroll)
+
+    def _browse(self):
+        d = filedialog.askdirectory()
+        if d:
+            self.path_var.set(d)
+
+    def _load(self):
+        folder = self.path_var.get().strip()
+        if not folder or not os.path.isdir(folder):
+            messagebox.showerror("Lỗi", "Vui lòng chọn folder hợp lệ!")
+            return
+        self._clear()
+        all_pass, fail = scan_folder(folder)
+        total = len(all_pass) + len(fail)
+
+        for w in self.stat_frame.winfo_children():
+            w.destroy()
+        tk.Label(self.stat_frame,
+                 text=f"Tổng: {total} ảnh   |",
+                 bg=BG, fg=LABEL_FG, font=("Segoe UI", 11)).pack(side="left")
+        tk.Label(self.stat_frame,
+                 text=f"  ✅ ALL PASS: {len(all_pass)}",
+                 bg=BG, fg=PASS_CLR, font=("Segoe UI", 11, "bold")).pack(side="left")
+        tk.Label(self.stat_frame,
+                 text=f"   ❌ FAIL: {len(fail)}",
+                 bg=BG, fg=FAIL_CLR, font=("Segoe UI", 11, "bold")).pack(side="left")
+
+        if total == 0:
+            tk.Label(self.inner, text="Không tìm thấy ảnh nào.",
+                     bg=BG, fg=LABEL_FG, font=("Segoe UI", 13)).pack(pady=40)
+            return
+
+        self._render_section("✅  ALL PASS", all_pass, PASS_CLR)
+        self._render_section("❌  FAIL",     fail,     FAIL_CLR)
+
+    def _render_section(self, title, paths, color):
+        if not paths:
+            return
+        tk.Label(self.inner, text=f"  {title}  ({len(paths)} ảnh)",
+                 bg=color, fg="white",
+                 font=("Segoe UI", 12, "bold"),
+                 anchor="w", pady=5).pack(fill="x", pady=(14, 4), padx=4)
+
+        grid = tk.Frame(self.inner, bg=BG)
+        grid.pack(fill="x", padx=4)
+
+        for idx, path in enumerate(paths):
+            row, col = divmod(idx, COLS)
+            cell = tk.Frame(grid, bg=BG, padx=4, pady=4)
+            cell.grid(row=row, column=col, sticky="nw")
+
+            thumb = make_thumb(path)
+            self._thumbs.append(thumb)
+
+            lbl_img = tk.Label(cell, image=thumb, bg=BG,
+                               relief="flat", cursor="hand2")
+            lbl_img.pack()
+            lbl_img.bind("<Button-1>", lambda e, p=path: self._open_full(p))
+
+            fname = os.path.basename(path)
+            short = fname if len(fname) <= 28 else fname[:25] + "…"
+            tk.Label(cell, text=short, bg=BG, fg="#cccccc",
+                     font=("Segoe UI", 8), wraplength=THUMB_W).pack()
+
+    def _open_full(self, path):
+        """Mở ảnh full-size trong cửa sổ mới."""
+        win = tk.Toplevel(self)
+        win.title(os.path.basename(path))
+        win.configure(bg=BG)
+        try:
+            img = Image.open(path)
+            img.thumbnail((900, 700), Image.LANCZOS)
+            photo = ImageTk.PhotoImage(img)
+            lbl = tk.Label(win, image=photo, bg=BG)
+            lbl.image = photo
+            lbl.pack(padx=8, pady=8)
+        except Exception as e:
+            tk.Label(win, text=f"Không mở được ảnh:\n{e}",
+                     bg=BG, fg=FAIL_CLR, font=("Segoe UI", 11)).pack(pady=20)
+
+    def _clear(self):
+        self._thumbs.clear()
+        for w in self.inner.winfo_children():
+            w.destroy()
+
+    def _on_inner_resize(self, _):
+        self.canvas.configure(scrollregion=self.canvas.bbox("all"))
+
+    def _on_canvas_resize(self, e):
+        self.canvas.itemconfig(self.canvas_win, width=e.width)
+
+    def _on_scroll(self, e):
+        if e.num == 4:
+            self.canvas.yview_scroll(-1, "units")
+        elif e.num == 5:
+            self.canvas.yview_scroll(1, "units")
+        else:
+            self.canvas.yview_scroll(int(-1 * (e.delta / 120)), "units")
+
+
+if __name__ == "__main__":
+    App().mainloop()
