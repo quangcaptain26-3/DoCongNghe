@@ -1,0 +1,205 @@
+﻿第八课: 我的眼镜摔坏了
+BÀI 8: KÍNH CỦA TÔI HỎNG RỒI
+PHẦN 1: TỪ VỰNG MỚI (生词)
+Dưới đây là danh sách từ vựng xuất hiện trong bài khóa, được chia thành các nhóm để bạn dễ học.
+STT
+	Chữ Hán
+	Pinyin
+	Loại từ
+	Nghĩa Tiếng Việt
+	1
+	照
+	zhào
+	(Động từ)
+	Chụp (ảnh)
+	2
+	洗
+	xǐ
+	(Động từ)
+	Rửa (ảnh), giặt, rửa
+	3
+	闭
+	bì
+	(Động từ)
+	Nhắm, đóng
+	4
+	油画
+	yóuhuà
+	(Danh từ)
+	Tranh sơn dầu
+	5
+	放大
+	fàngdà
+	(Động từ)
+	Phóng to
+	6
+	倍
+	bèi
+	(Lượng từ)
+	Lần, bội
+	7
+	公分
+	gōngfēn
+	(Lượng từ)
+	Centimet (cm)
+	8
+	差(一)点儿
+	chà (yì) diǎnr
+	(Phó từ)
+	Suýt nữa, kém một chút
+	9
+	碰
+	pèng
+	(Động từ)
+	Va chạm, đụng
+	10
+	起
+	qǐ
+	(Lượng từ)
+	Vụ (tai nạn...)
+	11
+	事故
+	shìgù
+	(Danh từ)
+	Sự cố, tai nạn
+	12
+	整
+	zhěng
+	(Tính từ)
+	Chẵn, tròn, trọn vẹn
+	13
+	眼镜
+	yǎnjìng
+	(Danh từ)
+	Mắt kính
+	14
+	别提了
+	bié tí le
+	(Khẩu ngữ)
+	Đừng nhắc đến nữa!
+	15
+	倒霉
+	dǎoméi
+	(Tính từ)
+	Xui xẻo, đen đủi
+	16
+	摔跤 / 摔
+	shuāijiāo / shuāi
+	(Động từ)
+	Ngã, té / Rơi, vỡ
+	17
+	掉
+	diào
+	(Động từ)
+	Rơi, rớt
+	18
+	地上
+	dìshang
+	(Danh từ)
+	Trên mặt đất
+	19
+	上班 / 下班
+	shàng bān / xià bān
+	(Động từ)
+	Đi làm / Tan làm
+	20
+	保证
+	bǎozhèng
+	(Động từ)
+	Đảm bảo
+	21
+	遵守
+	zūnshǒu
+	(Động từ)
+	Tuân thủ
+	22
+	规则
+	guīzé
+	(Danh từ)
+	Quy tắc, luật lệ
+	23
+	造成
+	zàochéng
+	(Động từ)
+	Gây ra, tạo thành
+	24
+	拥挤
+	yōngjǐ
+	(Tính từ/Động từ)
+	Đông đúc, chen chúc
+	25
+	主要
+	zhǔyào
+	(Tính từ)
+	Chủ yếu
+	26
+	原因
+	yuányīn
+	(Danh từ)
+	Nguyên nhân
+	27
+	之一
+	zhī yī
+	(Cụm từ)
+	Một trong những...
+	28
+	引起
+	yǐnqǐ
+	(Động từ)
+	Dẫn tới, gây ra
+	29
+	赶快
+	gǎnkuài
+	(Phó từ)
+	Mau chóng, nhanh lên
+	30
+	发展
+	fāzhǎn
+	(Động từ)
+	Phát triển
+	Từ bổ sung (补充生词):
+* 得 (děi): Phải (cần thiết làm gì đó)
+* 平时 (píngshí): Bình thường, lúc bình thường
+* 怕 (pà): Sợ, e rằng
+PHẦN 2: ĐIỂM NGỮ PHÁP VÀ MẪU CÂU QUAN TRỌNG (语法与注释)
+1. Thể hiện sự không hài lòng: 不怎么样 (bù zěnme yàng)
+Dùng để đánh giá một sự vật, sự việc nào đó "chẳng ra sao", "không tốt lắm".
+* Mẫu câu: 这张照片照得不怎么样。
+* Pinyin: Zhè zhāng zhàopiàn zhào de bù zěnme yàng.
+* Dịch: Bức ảnh này chụp chẳng ra sao cả.
+2. Chê bai mức độ: Tính từ + 了(一)点儿
+Biểu thị mức độ hơi vượt quá tiêu chuẩn mong muốn, mang ý không hài lòng.
+* Mẫu câu: 颜色深了一点儿。
+* Pinyin: Yánsè shēn le yìdiǎnr.
+* Dịch: Màu hơi đậm/tối một chút (Không đúng ý tôi).
+3. Phó từ 差(一)点儿 (Suýt nữa)
+Đây là điểm ngữ pháp cực kỳ quan trọng, thường thi HSK.
+* Trường hợp 1 (Chuyện xấu): 差点儿 + việc không tốt (Nghĩa là việc xấu ĐÃ KHÔNG XẢY RA -> May mắn).
+   * 我差点儿迟到。(Wǒ chàdiǎnr chídào) - Tôi suýt nữa đến muộn. (Thực tế là không muộn).
+   * 我差点儿没迟到。(Wǒ chàdiǎnr méi chídào) - Ý nghĩa y hệt câu trên: Suýt muộn (nhưng không muộn).
+* Trường hợp 2 (Chuyện tốt): 差点儿 + việc tốt (Nghĩa là việc tốt ĐÃ KHÔNG XẢY RA -> Tiếc nuối).
+   * 我差点儿考上大学了。(Wǒ chàdiǎnr kǎo shàng dàxué le) - Tôi suýt thi đỗ đại học rồi (Thực tế là thi rớt).
+4. Câu bị động ý nghĩa (Notional Passive)
+Trong tiếng Trung, đôi khi không cần dùng chữ "被" (Bị/Được), mà tự bản thân chủ ngữ (là vật chịu tác động) đứng đầu câu đã mang nghĩa bị động.
+* Mẫu câu: 我的眼镜摔坏了。
+* Pinyin: Wǒ de yǎnjìng shuāi huài le.
+* Dịch: Kính của tôi bị rơi hỏng rồi. (Chủ ngữ "kính" không tự rơi hỏng, mà bị rơi, nhưng không cần dùng "被").
+* Ví dụ khác: 照片洗好了。(Zhàopiàn xǐ hǎo le) - Ảnh được rửa xong rồi.
+5. Lặp lại Lượng từ (AA)
+Lượng từ lặp lại mang nghĩa "mỗi", "mọi", "tất cả". Đằng sau thường đi với "都" (đều).
+* Mẫu câu: 这些照片张张都很漂亮。
+* Pinyin: Zhèxiē zhàopiàn zhāng zhāng dōu hěn piàoliang.
+* Dịch: Những bức ảnh này tấm nào cũng (mọi tấm đều) rất đẹp.
+6. Cấu trúc tăng tiến: 一年比一年 (Năm sau... hơn năm trước / Ngày càng)
+Biểu thị sự thay đổi, tăng tiến theo thời gian.
+* Mẫu câu: 有汽车的人一年比一年多。
+* Pinyin: Yǒu qìchē de rén yì nián bǐ yì nián duō.
+* Dịch: Người có ô tô năm sau lại nhiều hơn năm trước (Ngày càng có nhiều người có ô tô).
+PHẦN 3: CÁC CÂU GIAO TIẾP MỞ RỘNG (GHI NHỚ ĐỂ NÓI CHUYỆN)
+Dựa vào chủ đề bài học, mình tặng bạn thêm các câu giao tiếp cực kỳ "đậm chất bản xứ" để áp dụng ngay:
+Chủ đề Chụp ảnh:
+1. 帮我拍张照片，好吗？ (Bāng wǒ pāi zhāng zhàopiàn, hǎo ma?) -> Chụp giúp tôi tấm ảnh được không?
+2. 这张闭眼了，重拍一张吧。 (Zhè zhāng bì yǎn le, chóng pāi yì zhāng ba.) -> Tấm này nhắm mắt rồi, chụp lại tấm khác đi.
+3. 这张拍得真好看，给我发一下。 (Zhè zhāng pāi de zhēn hǎokàn, gěi wǒ fā yíxià.) -> Tấm này chụp đẹp quá, gửi cho tôi với.
+Chủ đề Than thở / Gặp xui xẻo: 4. 今天倒霉透了！ (Jīntiān dǎoméi tòu le!) -> Hôm nay xui xẻo tột cùng / Đen như mõm chó! 5. 哎呀，别提了，我手机掉水里了。 (Āiyā, bié tí le, wǒ shǒujī diào shuǐ lǐ le.) -> Ây da, đừng nhắc nữa, điện thoại tôi rớt xuống nước rồi. 6. 真气人！ (Zhēn qì rén!) -> Thật tức chết đi được / Thật bực mình!
+Chủ đề Giao thông / Đi đường: 7. 路上堵得厉害，我可能会迟到10分钟。 (Lùshang dǔ de lìhai, wǒ kěnéng huì chídào 10 fēnzhōng.) -> Trên đường tắc kinh khủng, tôi có thể sẽ đến muộn 10 phút. 8. 前面发生交通事故了，过不去。 (Qiánmiàn fāshēng jiāotōng shìgù le, guò bu qù.) -> Phía trước xảy ra tai nạn giao thông rồi, không qua được đâu. 9. 大家都要遵守交通规则。 (Dàjiā dōu yào zūnshǒu jiāotōng guīzé.) -> Mọi người đều phải tuân thủ luật giao thông.
