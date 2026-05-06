@@ -1,0 +1,134 @@
+ENVT0100,LM:2022/10/08 01:08:35:802,DS:0000002054,CS:15727,MA:7C-10-C9-9E-05-8E,EI:           
+sRCVersion="7.4.8"
+InputBitLabels {
+	nNumberOfLabels=8
+	Label1 {
+		nBit=6
+		sLabel="Allowin"
+		sDescription="平台?料?要板"
+	}
+	Label2 {
+		nBit=7
+		sLabel="Outok"
+		sDescription="平台出料??托?OK"
+	}
+	Label3 {
+		nBit=8
+		sLabel="TrayPlatformReady"
+		sDescription="平台已準備好"
+	}
+	Label4 {
+		nBit=9
+		sLabel="RenyuanSafe"
+		sDescription="人員安台"
+	}
+	Label5 {
+		nBit=10
+		sLabel="Raster"
+		sDescription="放板光柵"
+	}
+	Label6 {
+		nBit=11
+		sLabel="ConveyorReady"
+		sDescription="移栽已準備好"
+	}
+	Label7 {
+		nBit=13
+		sLabel="PCBOK"
+		sDescription=""
+	}
+	Label8 {
+		nBit=15
+		sLabel="VacuumReady"
+		sDescription="真空到達"
+	}
+}
+InputByteLabels {
+	nNumberOfLabels=0
+}
+InputWordLabels {
+	nNumberOfLabels=0
+}
+OutputBitLabels {
+	nNumberOfLabels=13
+	Label1 {
+		nBit=2
+		sLabel="PCBin"
+		sDescription="?料?AGV?板"
+	}
+	Label2 {
+		nBit=3
+		sLabel="Allowout"
+		sDescription="出料?要托?"
+	}
+	Label3 {
+		nBit=4
+		sLabel="AGVIn"
+		sDescription="AGV?料?源"
+	}
+	Label4 {
+		nBit=5
+		sLabel="AGVOut"
+		sDescription="AGV出料?源"
+	}
+	Label5 {
+		nBit=6
+		sLabel="Vacuum"
+		sDescription="吸"
+	}
+	Label6 {
+		nBit=7
+		sLabel="Blow"
+		sDescription="吹"
+	}
+	Label7 {
+		nBit=8
+		sLabel="PCBPutComplete"
+		sDescription="交握信號,放板完成"
+	}
+	Label8 {
+		nBit=9
+		sLabel="Green"
+		sDescription="綠燈"
+	}
+	Label9 {
+		nBit=10
+		sLabel="Red"
+		sDescription="紅燈"
+	}
+	Label10 {
+		nBit=11
+		sLabel="Yellow"
+		sDescription="黃燈"
+	}
+	Label11 {
+		nBit=12
+		sLabel="Buzzer"
+		sDescription="蜂鳴器"
+	}
+	Label12 {
+		nBit=13
+		sLabel="HandShake01"
+		sDescription="第一穴交握"
+	}
+	Label13 {
+		nBit=14
+		sLabel="ConveyorErr"
+		sDescription="移載異常信號,常閉."
+	}
+}
+OutputByteLabels {
+	nNumberOfLabels=0
+}
+OutputWordLabels {
+	nNumberOfLabels=0
+}
+MemoryBitLabels {
+	nNumberOfLabels=0
+}
+MemoryByteLabels {
+	nNumberOfLabels=0
+}
+MemoryWordLabels {
+	nNumberOfLabels=0
+}

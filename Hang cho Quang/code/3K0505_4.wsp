@@ -1,0 +1,232 @@
+ENVT0100,LM:2025/06/09 13:02:43:657,DS:0000003156,CS:29263,MA:C4-00-AD-E0-60-B6,EI:           
+sActiveChild="XI6.pts"
+bMdiMaximized=True
+nProgramFileCount=1
+ProgramFile1 {
+	sName="Main.prg"
+	bOpened=True
+	nWinState=0
+	Window {
+		nLeft=85
+		nTop=74
+		nWidth=1025
+		nHeight=602
+	}
+}
+nIncludeFileCount=0
+nPointFileCount=5
+PointFile1 {
+	sName="robot1.pts"
+	bOpened=False
+	nWinState=0
+	Window {
+		nLeft=27
+		nTop=17
+		nWidth=803
+		nHeight=642
+	}
+}
+PointFile2 {
+	sName="XI6.pts"
+	bOpened=True
+	nWinState=0
+	Window {
+		nLeft=0
+		nTop=41
+		nWidth=699
+		nHeight=663
+	}
+}
+PointFile3 {
+	sName="cal02.pts"
+	bOpened=False
+	nWinState=0
+	Window {
+		nLeft=0
+		nTop=0
+		nWidth=525
+		nHeight=356
+	}
+}
+PointFile4 {
+	sName="Cal01.pts"
+	bOpened=False
+	nWinState=0
+	Window {
+		nLeft=-224
+		nTop=66
+		nWidth=1228
+		nHeight=700
+	}
+}
+PointFile5 {
+	sName="Cal03.pts"
+	bOpened=False
+	nWinState=0
+	Window {
+		nLeft=0
+		nTop=0
+		nWidth=773
+		nHeight=461
+	}
+}
+nForceFileCount=0
+sActiveWindow="main.prg"
+CmdWindow {
+	bOpened=False
+	Window {
+		nLeft=449
+		nTop=192
+		nWidth=372
+		nHeight=269
+	}
+	nWinState=0
+}
+RunWindow {
+	bOpened=False
+	Window {
+		nLeft=36
+		nTop=18
+		nWidth=1121
+		nHeight=568
+	}
+	nWinState=2
+	nNumOfDisplays=1
+	nSplitterDistance=629
+	Display1 {
+		nCamera=0
+		sSequences="1"
+	}
+	Display2 {
+		nCamera=0
+		sSequences="1"
+	}
+	Display3 {
+		nCamera=0
+		sSequences="1"
+	}
+	Display4 {
+		nCamera=0
+		sSequences="1"
+	}
+	Display5 {
+		nCamera=0
+		sSequences="1"
+	}
+	Display6 {
+		nCamera=0
+		sSequences="1"
+	}
+}
+IOLabelEditor {
+	bOpened=False
+	Window {
+		nLeft=0
+		nTop=0
+		nWidth=818
+		nHeight=458
+	}
+	nWinState=0
+}
+IOMonitor {
+	bOpened=False
+	Window {
+		nLeft=554
+		nTop=121
+		nWidth=579
+		nHeight=510
+	}
+}
+Simulator {
+	bOpened=False
+	Window {
+		nLeft=0
+		nTop=0
+		nWidth=0
+		nHeight=0
+	}
+}
+TaskMgr {
+	bOpened=False
+	Window {
+		nLeft=0
+		nTop=0
+		nWidth=0
+		nHeight=0
+	}
+}
+Macros {
+	bOpened=False
+	Window {
+		nLeft=0
+		nTop=0
+		nWidth=0
+		nHeight=0
+	}
+}
+RobotMgr {
+	bOpened=False
+	Window {
+		nLeft=86
+		nTop=67
+		nWidth=748
+		nHeight=521
+	}
+}
+UserErrorEditor {
+	bOpened=False
+	Window {
+		nLeft=0
+		nTop=0
+		nWidth=0
+		nHeight=0
+	}
+	nWinState=0
+}
+VisionGuide {
+	bOpened=True
+	Window {
+		nLeft=241
+		nTop=20
+		nWidth=1086
+		nHeight=900
+	}
+	nWinState=0
+	bShowFlowChart=True
+	nSplitterDistance1=826
+	nSplitterDistance2=675
+	nSplitterDistance3=696
+	nSplitterDistance4=644
+	nSplitterDistance5=745
+}
+GUIBuilder {
+	bOpened=False
+	Window {
+		nLeft=0
+		nTop=0
+		nWidth=0
+		nHeight=0
+	}
+	nWinState=0
+	nSplitterDistance1=0
+	nSplitterDistance2=0
+	nSplitterDistance3=0
+	nSplitterDistance4=0
+}
+ProjectExplorer {
+	bProgramsOpened=True
+	bIncludesOpened=False
+	bLabelsOpened=True
+	bMacrosOpened=False
+	bFunctionsOpened=True
+	bVisionOpened=True
+	bVisionSequencesOpened=True
+	bVisionCalibsOpened=True
+	bGUIBOpened=False
+	bGUIBFormsOpened=False
+	bRobotPointsOpened=True
+	bCommonPointsOpened=False
+	bForcesOpened=False
+	bCommonForcesOpened=False
+	bRobotsOpened1=True
+}

@@ -1,0 +1,24 @@
+GO Place01 +z(200)
+> 
+> jtran 6,-180
+!!Error: 10000, Command aborted by user
+> 
+> 
+>
+> go ScanShoot01 +Z(0)
+> 
+!!Error: 10000, Command aborted by user
+> 
+> 
+!!Error: 4001, Arm reached the limit of motion range., Robot 1, Joint 6
+> 
+> 
+> 
+> 
+> GO Pick01 +z(100)
+Pluse 1,2,3,4,5,6
+!!Error: 3100, Syntax error.
+> Pulse 1,2,3,4,5,6
+> Calpls 0,0,0,0,0,0
+> Calib 1,2,3,4,5,6
+
