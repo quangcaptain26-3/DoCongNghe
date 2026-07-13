@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction to Database and Structured Query Language (SQL) &mdash; Stanford Code the Change Guides  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/js/custom.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="https://codethechange.stanford.edu/guides/genindex.html" />
+    <link rel="search" title="Search" href="https://codethechange.stanford.edu/guides/search.html" />
+    <link rel="next" title="Zero Knowledge What? An Introduction to Zero Knowledge" href="https://codethechange.stanford.edu/guides/guide_zk.html" />
+    <link rel="prev" title="An Introduction to the Unix Command Line" href="https://codethechange.stanford.edu/guides/guide_unix_commands.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="https://codethechange.stanford.edu/guides/index.html" class="icon icon-home"> Stanford Code the Change Guides
+          
+
+          
+            
+            <img src="_static/ctcLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://codethechange.stanford.edu/guides/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Technical Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_android_testing.html">Android Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_flask_unit_testing.html">Unit Testing in Python Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_git.html">An Introduction to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_passwords.html">Storing Passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_slack.html">Managing Slack Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_unix_commands.html">Unix Commands</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="sql.html#">Introduction to Database and Structured Query Language</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sql.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html#relational-database">Relational Database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sql.html#advantage-of-relational-databases">Advantage of Relational Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sql.html#sidenote-types-of-relational-databases">Sidenote: Types of Relational Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sql.html#when-to-use-relational-databases">When to Use Relational Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html#non-relational-database">Non-relational Database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sql.html#advantage-of-non-relational-databases">Advantage of Non-relational Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sql.html#sidenote-types-of-non-relational-databases">Sidenote: Types of Non-relational Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html#structured-query-language-sql">Structured Query Language (SQL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sql.html#syntax-of-sql">Syntax of SQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html#licensing-and-attribution">Licensing and Attribution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_zk.html">Zero Knowledge Proofs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_kademlia.html">Kademlia DHT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_web_security.html">Web Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_securing_oss.html">Securing Open Source Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_accessibility.html">Creating Accessible Websites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_js.html">Layers of Modern Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_react.html">React with Hooks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Leadership Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/guide_feedback_session.html">Leading Individual Feedback Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://codethechange.stanford.edu/guides/leadership.html">Leading Teams</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://codethechange.stanford.edu/guides/index.html">Stanford Code the Change Guides</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://codethechange.stanford.edu/guides/index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction to Database and Structured Query Language (SQL)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://codethechange.stanford.edu/guides/_sources/sql.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-database-and-structured-query-language-sql">
+<h1>Introduction to Database and Structured Query Language (SQL)<a class="headerlink" href="sql.html#introduction-to-database-and-structured-query-language-sql" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="sql.html#introduction" title="Permalink to this headline">¶</a></h2>
+<p>A database serves as a platform to store and manage data. Database systems
+provide an environment for storage and retrieval of both structured and
+semi-structured data. Structuring the database tailored to one’s needs
+is as important as designing a visually appealing and easily navigate-able
+UI/UX front-end. A good database would have advantages in terms of scale,
+speed, stability, evolution, reliability, cost efficiency, etc.</p>
+<p>The objective of this guide is to provide an overview of relational
+databases, non-relational databases, some of the prominent languages used
+to query the databases, and a deep dive into Structured Query Language (SQL),
+which is a standard language for relational databases.</p>
+</div>
+<div class="section" id="relational-database">
+<h2>Relational Database<a class="headerlink" href="sql.html#relational-database" title="Permalink to this headline">¶</a></h2>
+<p>A relational database refers to any database that follows the relational
+model provided by traditional relational database management systems.
+What is meant by <em>relational</em> is that each object in the database is linked
+to some other object in certain ways.</p>
+<p>One keyword that is associated with relational databases is <strong>table</strong>.
+Relational databases store data in <strong>tables</strong> and rows, built on the
+concepts of relational algebra.</p>
+<p>Relational databases are perhaps the most straightforward way of representing
+the data. Adopting this scheme, each row in the table is a record with a unique
+ID called the <em>key</em>, while the columns of the table hold attributes of the data.</p>
+<div class="section" id="advantage-of-relational-databases">
+<h3>Advantage of Relational Databases<a class="headerlink" href="sql.html#advantage-of-relational-databases" title="Permalink to this headline">¶</a></h3>
+<p>Relational databases have a number of advantages, which include but are
+not limited to the following:</p>
+<p>1. It is easy to remove redundant data through a process called
+<strong>normalization</strong>. The normalization process entails the organization of
+the columns (also called as attributes) and tables (also called as relations)
+of a database to ensure that their dependencies are properly enforced by
+database integrity constraints.</p>
+<p>2. Relational databases provide the ability to deal with larger datasets,
+as long as data are structured coherently and they abide by conventions.</p>
+<p>3. Relational databases offer almost infinite number of possible permutations to
+slice and manipulate the data, based on one’s needs, which turns out to be
+a huge advantage in data analysis.</p>
+<p>4. Relational databases have reputations as a standard and mature tool
+for the design, collection, and storage of data, first introduced
+and widely utilized since the 1970s.</p>
+</div>
+<div class="section" id="sidenote-types-of-relational-databases">
+<h3>Sidenote: Types of Relational Databases<a class="headerlink" href="sql.html#sidenote-types-of-relational-databases" title="Permalink to this headline">¶</a></h3>
+<p>Examples of relational databases are: MySQL, PostgreSQL, SQLite3, etc.</p>
+<p><strong>Question</strong>: Is there a need for all these different relational databases?</p>
+<p><strong>Answer</strong>: There is! These database systems are designed to meet the needs
+of a particular task or a certain industry. Although the underlying scheme
+is relational, their specifics do differ.</p>
+</div>
+<div class="section" id="when-to-use-relational-databases">
+<h3>When to Use Relational Databases<a class="headerlink" href="sql.html#when-to-use-relational-databases" title="Permalink to this headline">¶</a></h3>
+<p>Oracle provides the following guideline in the section <em>What to Look for
+When Selecting a Relational Database</em>, duplicated below with some degree of
+abridgement:</p>
+<p>Several factors can guide your decision when choosing among database types
+and relational database products. Ask yourself the following questions.</p>
+<ul class="simple">
+<li><p>What are our data accuracy requirements? [Will data storage and accuracy</p></li>
+</ul>
+<p>rely on business logic? Does our data have stringent requirements for accuracy?]</p>
+<ul class="simple">
+<li><p>Do we need scalability? [What is the scale of the data to be managed,</p></li>
+</ul>
+<p>and what is its anticipated growth?]</p>
+<ul class="simple">
+<li><p>How important is concurrency? [Will multiple users and applications need</p></li>
+</ul>
+<p>simultaneous data access? Does the database software support concurrency
+while protecting the data?]</p>
+<ul class="simple">
+<li><p>What are our performance and reliability needs? [Do we need a high-performance,</p></li>
+</ul>
+<p>high-reliability product? What are the requirements for query-response
+performance?]</p>
+</div>
+</div>
+<div class="section" id="non-relational-database">
+<h2>Non-relational Database<a class="headerlink" href="sql.html#non-relational-database" title="Permalink to this headline">¶</a></h2>
+<p>A non-relational database refers to any any database that does not follow
+the relational model provided by traditional relational database management
+systems.</p>
+<p>In non-relational databases, you would not expect to see a table. They instead
+utilize a storage model optimized for the specific requirements of the types
+of data being stored. Very commonly, data are stored as simple key/value pairs,
+or even more often than that, data are stored as JSON documents.</p>
+<p>It is worthwhile noting the term NoSQL, which refers to database systems that
+do not use SQL for queries (hence No-SQL), but uses other programming languages
+to achieve this purpose. For instance, MongoDB uses Javascript, which has a
+distinguished advantage in parsing and handling JSON data. Many non-relational
+databases also use Python as their querying language.</p>
+<div class="section" id="advantage-of-non-relational-databases">
+<h3>Advantage of Non-relational Databases<a class="headerlink" href="sql.html#advantage-of-non-relational-databases" title="Permalink to this headline">¶</a></h3>
+<p>Relational databases have a number of advantages, which include but are
+not limited to the following:</p>
+<p>1. Non-relational databases are better in storing and processing large amounts
+of unstructured data. Unlike relational databases, it is not obligatory to
+relate an object to other ones. Thus, NoSQL databases are more flexible.</p>
+<p>2. As a corollary to the first advantage, the fact that non-relational databases
+contain data in an unstructured manner makes the iteration and code pushes very
+fast.</p>
+<p>3. Non-relational databases use object-oriented programming paradigm, which
+is easy to use and is widely applicable.</p>
+</div>
+<div class="section" id="sidenote-types-of-non-relational-databases">
+<h3>Sidenote: Types of Non-relational Databases<a class="headerlink" href="sql.html#sidenote-types-of-non-relational-databases" title="Permalink to this headline">¶</a></h3>
+<p>Examples of relational databases are: MongoDB, DynamoDB, etc.</p>
+<p>MongoDB stores data as a JSON file; DynamoDB is a AWS product, usually
+lauded for its built-in security and in-memory caching for faster interactions.
+Major companies tend to use DynamoDB a lot.</p>
+</div>
+</div>
+<div class="section" id="structured-query-language-sql">
+<h2>Structured Query Language (SQL)<a class="headerlink" href="sql.html#structured-query-language-sql" title="Permalink to this headline">¶</a></h2>
+<p>Our main purpose is to explore SQL, a standard language for relational
+database management systems, which include Oracle, Sybase, Microsoft
+SQL Server, Ingres, etc. SQL is a relatively straightforward language, and
+it is built on relational logic, which makes it extra useful and easier to learn.</p>
+<p>RDBMS, which stands for Relational Database Management System, is the underlying
+form of SQL, and as we have seen above, data in an RDBMS are stored in objects
+called <strong>tables</strong>, which might look as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">+----+----------+-----+-------------+-------------------+</span>
+<span class="go">| ID | NAME     | AGE | DEPARTMENT  | FAVORITE_NUMBER   |</span>
+<span class="go">+----+----------+-----+-------------+-------------------+</span>
+<span class="go">|  1 | Keith    |  32 | CS          |  137              |</span>
+<span class="go">|  2 | Chris    |  54 | CS/Ling     |  1                |</span>
+<span class="go">+----+----------+-----+-------------+-------------------+</span>
+</pre></div>
+</div>
+<p>This table can have a name! We can call it <code class="docutils literal notranslate"><span class="pre">PROFESSORS</span></code>. (It is a convention
+to name the table with uppercase letters only.)</p>
+<p>A table has smaller entities called <strong>fields</strong>. <code class="docutils literal notranslate"><span class="pre">PROFESSORS</span></code> table
+consists of ID, NAME, AGE, DEPARTMENT, and FAVORITE NUMBER fields.</p>
+<p>Before getting into the syntax of SQL, we need to know a special value that
+can appear in a table: NULL. NULL signifies that the value/entry in the field
+is blank or NaN. Note that <code class="docutils literal notranslate"><span class="pre">NULL</span> <span class="pre">!=</span> <span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">NULL</span> <span class="pre">!=</span> <span class="pre">(empty</span> <span class="pre">string)</span></code>.</p>
+<div class="section" id="syntax-of-sql">
+<h3>Syntax of SQL<a class="headerlink" href="sql.html#syntax-of-sql" title="Permalink to this headline">¶</a></h3>
+<p><strong>CREATE statement</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">CREATE</span></code> allows us to create a new table in the database.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">CREATE TABLE professors (</span>
+<span class="go">    id INTEGER,</span>
+<span class="go">    name TEXT,</span>
+<span class="go">    age INT,</span>
+<span class="go">    department TEXT,</span>
+<span class="go">    fav_num INT</span>
+<span class="go">);</span>
+</pre></div>
+</div>
+<p><strong>SELECT statement</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> allows us to fetch data from a database. You can either select
+column(s) from a particular table, or can select all columns from a table.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT column1, column2, ..., columnn FROM professors;</span>
+<span class="go">SELECT * FROM professors;</span>
+</pre></div>
+</div>
+<p><strong>INSERT statement</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">INSERT</span></code> allows us to insert a new <strong>row</strong> into a table.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">INSERT INTO PROFESSORS (id, name, age, department, fav_num) VALUES (3, MTL, 61, Dean, 100);</span>
+</pre></div>
+</div>
+<p><strong>ALTER statement</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">ALTER</span></code> allows us to add a new column to a table.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ALTER TABLE PROFESSORS ADD COLUMN fav_book TEXT;</span>
+</pre></div>
+</div>
+<p><strong>UPDATE statement</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> allows us to edit/change a row in a table.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">UPDATE PROFESSORS SET fav_book = &#39;C++ Programming Language Guide&#39; WHERE name = &#39;Keith&#39;;</span>
+</pre></div>
+</div>
+<p><strong>DELETE statement</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> (or more specifically, <code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span></code>) allows us to delete
+one or more rows from a table.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">DELETE FROM PROFESSORS WHERE favorite_book IS NULL;</span>
+</pre></div>
+</div>
+<p><strong>WHERE keyword</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code> allows us to restrict our query results to a certain condition</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT * FROM PROFESSORS WHERE fav_num &gt; 100;</span>
+</pre></div>
+</div>
+<p>The common comparison operators (=, !=, &gt;, &lt;, &gt;=, &lt;=) are used in SQL.</p>
+<p><strong>AND/OR keywords</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">AND</span></code> operator allows us to combine multiple conditions where both conditions
+must be met, used in tandem with <a href="sql.html#id1"><span class="problematic" id="id2">``</span></a>WHERE` keywords.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT * FROM PROFESSORS WHERE fav_num &gt; 100 AND age BETWEEN 20 AND 60;</span>
+</pre></div>
+</div>
+<p>Likewise, <code class="docutils literal notranslate"><span class="pre">OR</span></code> operator allows us to combine multiple conditions where at least one of
+the conditions must be met, used in tandem with <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> keywords.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT * FROM PROFESSORS WHERE fav_num &gt; 100 OR age BETWWEEN 20 AND 60;</span>
+</pre></div>
+</div>
+<p><strong>ORDER BY keyword</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> allows us to sort the results, either alphabetically or numerically.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT * FROM PROFESSORS ORDER BY name;</span>
+<span class="go">SELECT * FROM PROFESSORS ORDER BY name DESC;</span>
+</pre></div>
+</div>
+<p><strong>LIMIT keyword</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> allows us to specify the maximum number of rows the result will have.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT * FROM PROFESSORS LIMIT 10;</span>
+</pre></div>
+</div>
+<p><strong>COUNT function</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">COUNT()</span></code> function allows us to count the number of <strong>non-empty</strong> values in
+a column. The input is the name of a column.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT COUNT(*) FROM PROFESSORS;</span>
+</pre></div>
+</div>
+<p><strong>SUM function</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">SUM()</span></code> function allows us to return the sum of all the values in the
+specified column.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT SUM(AGE) FROM PROFESSORS;</span>
+</pre></div>
+</div>
+<p><strong>MAX/MIN functions</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">MAX()</span></code> function allows us to return the largest value in the specified column,
+and <code class="docutils literal notranslate"><span class="pre">MIN()</span></code> the smallest value.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT MAX(AGE) FROM PROFESSORS;</span>
+<span class="go">SELECT MIN(AGE) FROM PROFESSORS;</span>
+</pre></div>
+</div>
+<p><strong>AVG functions</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">AVERAGE()</span></code> function allows us to return the average of the values in a specified
+column.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT AVG(AGE) FROM PROFESSORS;</span>
+</pre></div>
+</div>
+<p><strong>GROUP BY statement</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> statement allows us to arrange identical data into <strong>groups</strong>,
+used in tandem with <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT age, COUNT(*) FROM PROFESSORS GROUP BY age;</span>
+
+<span class="go">// identical to, for instance:</span>
+
+<span class="go">SELECT COUNT(*) FROM PROFESSORS WHERE age = 20;</span>
+<span class="go">SELECT COUNT(*) FROM PROFESSORS WHERE age = 40;</span>
+<span class="go">SELECT COUNT(*) FROM PROFESSORS WHERE age = 60;</span>
+</pre></div>
+</div>
+<p><strong>DISTINCT keyword</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> keyword allows us to filter duplicate values and return rows
+of specified column.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT DISTINCT fav_book FROM PROFESSORS;</span>
+</pre></div>
+</div>
+<p><strong>INNER JOIN keyword</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> allows us to select records that have matching value in <strong>two
+or more</strong> tables. Assume that there is another table called <code class="docutils literal notranslate"><span class="pre">CSFACULTY</span></code> that
+contains faculty members in the Computer Science Department.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT name FROM PROFESSORS INNER JOIN CSFACULTY ON PROFESSORS.name = CSFACULTY.name;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="licensing-and-attribution">
+<h2>Licensing and Attribution<a class="headerlink" href="sql.html#licensing-and-attribution" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (c) 2020 U8N WXD (<a class="reference external" href="https://github.com/U8NWXD">https://github.com/U8NWXD</a>) &lt;<a class="reference external" href="mailto:cs&#46;temporary&#37;&#52;&#48;icloud&#46;com">cs<span>&#46;</span>temporary<span>&#64;</span>icloud<span>&#46;</span>com</a>&gt;</p>
+<p><a class="reference external" href="http://creativecommons.org/licenses/by/4.0/"><img alt="license" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+<p>This work, including both this document and the source code in the associated
+GitHub repository, is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0
+International License</a>.</p>
+<p>This work was initially created for a workshop at
+<a class="reference external" href="http://www.codethechange.stanford.edu">Stanford Code the Change</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://codethechange.stanford.edu/guides/guide_zk.html" class="btn btn-neutral float-right" title="Zero Knowledge What? An Introduction to Zero Knowledge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="https://codethechange.stanford.edu/guides/guide_unix_commands.html" class="btn btn-neutral float-left" title="An Introduction to the Unix Command Line" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 - 2021, Stanford Code the Change unless otherwise noted.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
