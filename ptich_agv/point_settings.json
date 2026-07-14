@@ -1,0 +1,17 @@
+{
+  "_comment": "AGV 特定點位設定檔，修改此檔不需更動程式碼",
+
+  "threshold_min": 12,
+
+  "excluded_points": {
+    "_comment": "列在此處的點位完全排除異常統計，停留再久也不算異常",
+    "Home":     ["232", "1025", "259"],
+    "Charging": ["239"]
+  },
+
+  "elevator": {
+    "_comment": "電梯點位使用獨立的異常時間閾值（threshold_min），停留超過此時間才算異常",
+    "threshold_min": 3,
+    "points": ["221", "1294", "223", "1767"]
+  }
+}
