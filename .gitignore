@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments (KHONG commit - moi may tu tao lai)
+.venv*/
+venv/
+env/
+
+# PyInstaller work dir
+build_pyi/
+build/AGV_Analyzer/
+
+# App da build (nhi phan lon) - KHONG commit vao repo.
+# Khuyen nghi: dua len GitHub Releases duoi dang .zip thay vi commit truc tiep.
+dist/
+AGV_Analyzer.zip

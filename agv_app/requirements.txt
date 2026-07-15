@@ -1,0 +1,12 @@
+# AGV Analyzer - phien ban thu vien PINNED cho Python 3.8 (Windows x64)
+# Cai bang: py -3.8 -m pip install -r requirements.txt
+#
+# Luu y:
+#   - PyQt5-sip phai < 12.16 vi tu 12.16 tro len yeu cau Python >= 3.9.
+#   - Khong dung pandas/numpy (chi phan tich tu log .txt + xuat openpyxl).
+
+PyQt5==5.15.10
+PyQt5-Qt5==5.15.2
+PyQt5-sip==12.13.0
+openpyxl==3.1.2
+pyinstaller==5.13.2
