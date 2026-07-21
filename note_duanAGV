@@ -1,3 +1,7 @@
 1. Phân tích nhật ký không thể được thực hiện quá hai ngày sau đó (ví dụ: nếu nhật ký là của thứ Bảy, và Chủ nhật là ngày lễ, việc phân tích thứ Bảy vào thứ Hai sẽ chỉ hiển thị Chủ nhật).
 
 2. Không thể tính toán tỷ lệ bất thường và tỷ lệ hoạt động của AGV hàng tuần hoặc hàng tháng.
+
+Kiểm tra và sửa lai chương trình Log phân tích bất thường hàng ngày và chương trính tính toán % bất thương hàng ngày cùng % hoạt động hàng ngày
+1.	Tính toán % bất thường, % hoạt động AGV, trong ngày, tuần , tháng
+2.	Sửa chương trình AbnormalAnalyse để tự đẩy log từ Log tổng về Log Time.
